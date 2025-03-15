@@ -1,6 +1,4 @@
 
-import { useState, useEffect } from 'react';
-
 interface TestimonialCardProps {
   name: string;
   location: string;
@@ -9,53 +7,23 @@ interface TestimonialCardProps {
   index?: number;
 }
 
-export const TestimonialCard = ({
-  name,
-  location,
-  quote,
+export const TestimonialCard = ({ 
+  name, 
+  location, 
+  quote, 
   rating,
-  index = 0
+  index = 0 
 }: TestimonialCardProps) => {
-  const [isInView, setIsInView] = useState(false);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    
-    const timeout = setTimeout(() => {
-      const element = document.getElementById(`testimonial-${index}`);
-      if (element) observer.observe(element);
-    }, 100);
-    
-    return () => {
-      clearTimeout(timeout);
-      observer.disconnect();
-    };
-  }, [index]);
-
   return (
-    <div
-      id={`testimonial-${index}`}
-      className={`bg-amber-900/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-amber-700/30 p-6 transition-all duration-700 hover:shadow-xl hover:-translate-y-2 ${
-        isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
-      style={{ transitionDelay: `${index * 0.15}s` }}
+    <div 
+      className="bg-amber-900/20 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-amber-700/30 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-in"
+      style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
     >
       <div className="flex items-center mb-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${i < rating ? "text-amber-400" : "text-gray-600"} ${
-              isInView ? 'animate-zoom-in' : ''
-            }`}
-            style={{ animationDelay: `${0.3 + (i * 0.1)}s` }}
+            className={`w-5 h-5 ${i < rating ? "text-amber-400" : "text-gray-600"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -64,9 +32,9 @@ export const TestimonialCard = ({
         ))}
       </div>
 
-      <p className={`text-amber-100 mb-6 italic ${isInView ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.6s' }}>"{quote}"</p>
+      <p className="text-amber-100 mb-6 italic">"{quote}"</p>
 
-      <div className={`flex items-center ${isInView ? 'animate-fade-in' : ''}`} style={{ animationDelay: '0.7s' }}>
+      <div className="flex items-center">
         <div className="w-10 h-10 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 flex items-center justify-center text-white font-bold">
           {name.charAt(0)}
         </div>

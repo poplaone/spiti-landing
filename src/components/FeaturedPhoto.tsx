@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 
 interface FeaturedPhotoProps {
   image: string;
@@ -46,14 +45,13 @@ export const FeaturedPhoto = ({ image, caption, index = 0 }: FeaturedPhotoProps)
         <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-yellow-600/20 rounded-2xl z-0"></div>
         <div className="relative h-full w-full overflow-hidden rounded-xl z-10">
           <div className={`absolute inset-0 bg-gray-200 animate-pulse ${isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
-          <Image
+          <img
             src={image}
             alt={caption}
-            fill
-            className={`object-cover transition-all duration-700 group-hover:scale-110 ${
+            className={`object-cover w-full h-full transition-all duration-700 group-hover:scale-110 ${
               isLoaded ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'
             }`}
-            onLoadingComplete={() => setIsLoaded(true)}
+            onLoad={() => setIsLoaded(true)}
           />
         </div>
       </div>

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from 'next/image';
 import { Navbar } from '@/components/Navbar';
 import { FeaturedPhoto } from '@/components/FeaturedPhoto';
 import { TourPackageCard } from '@/components/TourPackageCard';
@@ -53,12 +52,10 @@ const Index = () => {
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-r from-amber-900/70 via-amber-800/60 to-amber-700/70"></div>
           <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            <Image
+            <img
               src="/placeholder.svg?height=1080&width=1920"
               alt="Spiti Valley"
-              fill
-              className="object-cover"
-              priority
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
@@ -353,11 +350,10 @@ const Index = () => {
       <section className="py-16 relative">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 via-amber-800/80 to-amber-700/80"></div>
-          <Image
+          <img
             src="/placeholder.svg?height=1080&width=1920"
             alt="Spiti Valley"
-            fill
-            className="object-cover mix-blend-overlay"
+            className="h-full w-full object-cover mix-blend-overlay"
           />
         </div>
         <div className="container mx-auto px-4">
