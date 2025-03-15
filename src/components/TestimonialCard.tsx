@@ -16,14 +16,14 @@ export const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <div 
-      className="bg-sand/60 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-sand-dark/30 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-in"
+      className="bg-white/90 backdrop-blur-md rounded-2xl overflow-hidden shadow-lg border border-sand-dark/20 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 opacity-0 animate-fade-in"
       style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
     >
       <div className="flex items-center mb-4">
         {Array.from({ length: 5 }).map((_, i) => (
           <svg
             key={i}
-            className={`w-5 h-5 ${i < rating ? "text-terracotta" : "text-gray-400"}`}
+            className={`w-5 h-5 ${i < rating ? "text-terracotta" : "text-gray-300"}`}
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -35,7 +35,7 @@ export const TestimonialCard = ({
       <p className="text-foreground mb-6 italic">"{quote}"</p>
 
       <div className="flex items-center">
-        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-skyblue to-skyblue-light flex items-center justify-center text-white font-bold">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-skyblue to-skyblue-dark flex items-center justify-center text-white font-bold">
           {name.charAt(0)}
         </div>
         <div className="ml-3">

@@ -53,29 +53,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
-        // Custom colors based on Spiti Valley landscape
+        // Updated luxury color palette with higher contrast
         skyblue: {
-          light: "#7FB2E5",
-          DEFAULT: "#1E90FF", // Deep Sky Blue
-          dark: "#1A75D2",
+          light: "#61A9F1", // Brighter, more saturated blue
+          DEFAULT: "#0D6EFD", // Rich, vibrant blue
+          dark: "#0B5ED7", // Deeper blue for depth
         },
         sand: {
-          light: "#E8DFC9",
-          DEFAULT: "#D8CEBA", // Earthy Beige/Sand
-          dark: "#C0B7A3",
+          light: "#F8F4E9", // Creamy off-white
+          DEFAULT: "#E8E0CC", // Soft, warm beige
+          dark: "#D0C8B0", // Deeper neutral for contrast
         },
         terracotta: {
-          light: "#E87E51",
-          DEFAULT: "#CC5A2B", // Warm Terracotta/Burnt Orange
-          dark: "#A84A24",
+          light: "#FF7A5A", // Bright coral/terracotta
+          DEFAULT: "#E64A19", // Deep, rich terracotta
+          dark: "#BF360C", // Dark terracotta for strong contrast
         },
         offwhite: {
-          DEFAULT: "#F5F5F5", // Light Gray/Off-White
+          DEFAULT: "#F9F7F3", // Ultra-light cream/off-white
         },
         olive: {
-          light: "#A3B18A",
-          DEFAULT: "#83946C", // Subtle Green/Olive
-          dark: "#606D4E",
+          light: "#AEC09A", // Lighter olive green
+          DEFAULT: "#879D77", // Mid-tone olive 
+          dark: "#5F6D50", // Deep olive for contrast
         },
       },
       borderRadius: {
