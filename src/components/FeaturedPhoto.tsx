@@ -41,8 +41,8 @@ export const FeaturedPhoto = ({ image, caption, index = 0 }: FeaturedPhotoProps)
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg bg-amber-900/20 backdrop-blur-sm p-2 transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-600/20 to-yellow-600/20 rounded-2xl z-0"></div>
+      <div className="relative aspect-square overflow-hidden rounded-2xl shadow-lg bg-sand/60 backdrop-blur-sm p-2 transition-all duration-500 group-hover:shadow-xl group-hover:-translate-y-2">
+        <div className="absolute inset-0 bg-gradient-to-br from-skyblue/10 to-terracotta/10 rounded-2xl z-0"></div>
         <div className="relative h-full w-full overflow-hidden rounded-xl z-10">
           <div className={`absolute inset-0 bg-gray-200 animate-pulse ${isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
           <img
@@ -55,7 +55,7 @@ export const FeaturedPhoto = ({ image, caption, index = 0 }: FeaturedPhotoProps)
           />
         </div>
       </div>
-      <p className="mt-3 text-sm text-center font-medium text-amber-100 transition-all duration-500 group-hover:text-white">{caption}</p>
+      <p className="mt-3 text-sm text-center font-medium text-foreground transition-all duration-500 group-hover:text-skyblue">{caption}</p>
     </div>
   );
 };

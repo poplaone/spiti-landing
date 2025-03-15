@@ -53,6 +53,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
+        // Custom colors based on Spiti Valley landscape
+        skyblue: {
+          light: "#7FB2E5",
+          DEFAULT: "#1E90FF", // Deep Sky Blue
+          dark: "#1A75D2",
+        },
+        sand: {
+          light: "#E8DFC9",
+          DEFAULT: "#D8CEBA", // Earthy Beige/Sand
+          dark: "#C0B7A3",
+        },
+        terracotta: {
+          light: "#E87E51",
+          DEFAULT: "#CC5A2B", // Warm Terracotta/Burnt Orange
+          dark: "#A84A24",
+        },
+        offwhite: {
+          DEFAULT: "#F5F5F5", // Light Gray/Off-White
+        },
+        olive: {
+          light: "#A3B18A",
+          DEFAULT: "#83946C", // Subtle Green/Olive
+          dark: "#606D4E",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

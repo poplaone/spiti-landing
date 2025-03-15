@@ -44,13 +44,13 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-amber-900/20 via-amber-800/10 to-amber-700/20">
+    <main className="min-h-screen bg-gradient-to-b from-sand-light via-sand to-sand-dark/40">
       <Navbar />
 
       {/* Hero Section with Form on Right */}
       <section id="home" className="relative min-h-screen pt-20">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-900/70 via-amber-800/60 to-amber-700/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-skyblue-dark/70 via-skyblue/60 to-skyblue-light/70"></div>
           <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <img
               src="/placeholder.svg?height=1080&width=1920"
@@ -64,22 +64,22 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-80px)]">
             {/* Left Side - Typography with animations */}
             <div className="text-center lg:text-left mt-16 lg:mt-0">
-              <div className={`inline-block px-6 py-2 mb-6 rounded-full bg-amber-800/30 backdrop-blur-md border border-amber-700/30 text-amber-200 font-medium transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className={`inline-block px-6 py-2 mb-6 rounded-full bg-skyblue/30 backdrop-blur-md border border-skyblue-light/30 text-offwhite font-medium transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Discover the Himalayan Wonder
               </div>
               <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 SPITI VALLEY TOUR PACKAGES
               </h1>
-              <p className={`text-lg md:text-xl text-blue-100 mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <p className={`text-lg md:text-xl text-offwhite mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 Customized Tours from Trusted Local Agents At Lowest Prices
               </p>
               <div className={`flex flex-wrap justify-center lg:justify-start gap-4 transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <Button className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white border-0 shadow-lg shadow-amber-800/30 transition-all duration-300 hover:shadow-amber-800/50 px-8 py-6 text-lg">
+                <Button className="bg-gradient-to-r from-terracotta to-terracotta-light hover:from-terracotta-dark hover:to-terracotta text-white border-0 shadow-lg shadow-terracotta-dark/30 transition-all duration-300 hover:shadow-terracotta-dark/50 px-8 py-6 text-lg">
                   Explore Packages
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-2 border-amber-500/30 text-amber-100 hover:bg-amber-800/20 px-8 py-6 text-lg"
+                  className="border-2 border-offwhite/30 text-offwhite hover:bg-skyblue/20 px-8 py-6 text-lg"
                 >
                   Learn More
                 </Button>
@@ -88,29 +88,29 @@ const Index = () => {
 
             {/* Right Side - Lead Form with glass effect and animations */}
             <div className={`lg:ml-auto lg:max-w-md transition-all duration-700 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <Card className="border-0 shadow-2xl bg-amber-900/20 backdrop-blur-lg overflow-hidden rounded-2xl">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-yellow-600 to-amber-400"></div>
+              <Card className="border-0 shadow-2xl bg-sand/20 backdrop-blur-lg overflow-hidden rounded-2xl">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-skyblue via-skyblue-light to-skyblue"></div>
                 <CardContent className="p-6 md:p-8">
-                  <h2 className="text-2xl font-bold text-center mb-6 text-white">Get Free Tour Plan</h2>
+                  <h2 className="text-2xl font-bold text-center mb-6 text-foreground">Get Free Tour Plan</h2>
                   <form className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="fullName" className="text-amber-100">
+                      <Label htmlFor="fullName" className="text-foreground">
                         Full Name
                       </Label>
                       <div className="relative">
                         <Input
                           id="fullName"
                           placeholder="Your full name"
-                          className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                          className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                         />
-                        <div className="absolute left-3 top-2.5 text-amber-400">
+                        <div className="absolute left-3 top-2.5 text-skyblue">
                           <Users className="h-5 w-5" />
                         </div>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email" className="text-amber-100">
+                      <Label htmlFor="email" className="text-foreground">
                         Email Id.
                       </Label>
                       <div className="relative">
@@ -118,16 +118,16 @@ const Index = () => {
                           id="email"
                           type="email"
                           placeholder="Your email address"
-                          className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                          className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                         />
-                        <div className="absolute left-3 top-2.5 text-amber-400">
+                        <div className="absolute left-3 top-2.5 text-skyblue">
                           <Mail className="h-5 w-5" />
                         </div>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="phone" className="text-amber-100">
+                      <Label htmlFor="phone" className="text-foreground">
                         Contact No.
                       </Label>
                       <div className="relative">
@@ -135,9 +135,9 @@ const Index = () => {
                           id="phone"
                           type="tel"
                           placeholder="Your phone number"
-                          className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                          className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                         />
-                        <div className="absolute left-3 top-2.5 text-amber-400">
+                        <div className="absolute left-3 top-2.5 text-skyblue">
                           <Phone className="h-5 w-5" />
                         </div>
                       </div>
@@ -145,23 +145,23 @@ const Index = () => {
 
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="duration" className="text-amber-100">
+                        <Label htmlFor="duration" className="text-foreground">
                           Duration
                         </Label>
                         <div className="relative">
                           <Input
                             id="duration"
                             placeholder="Days"
-                            className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                            className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                           />
-                          <div className="absolute left-3 top-2.5 text-amber-400">
+                          <div className="absolute left-3 top-2.5 text-skyblue">
                             <Clock className="h-5 w-5" />
                           </div>
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="adults" className="text-amber-100">
+                        <Label htmlFor="adults" className="text-foreground">
                           Adults
                         </Label>
                         <div className="relative">
@@ -170,9 +170,9 @@ const Index = () => {
                             type="number"
                             min="1"
                             defaultValue="2"
-                            className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                            className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                           />
-                          <div className="absolute left-3 top-2.5 text-amber-400">
+                          <div className="absolute left-3 top-2.5 text-skyblue">
                             <Users className="h-5 w-5" />
                           </div>
                         </div>
@@ -180,38 +180,38 @@ const Index = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="travelDate" className="text-amber-100">
+                      <Label htmlFor="travelDate" className="text-foreground">
                         Travel Date
                       </Label>
                       <div className="relative">
                         <Input
                           id="travelDate"
                           type="date"
-                          className="pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                          className="pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                         />
-                        <div className="absolute left-3 top-2.5 text-amber-400">
+                        <div className="absolute left-3 top-2.5 text-skyblue">
                           <Calendar className="h-5 w-5" />
                         </div>
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="message" className="text-amber-100">
+                      <Label htmlFor="message" className="text-foreground">
                         Your Message
                       </Label>
                       <div className="relative">
                         <Textarea
                           id="message"
                           placeholder="Tell us about your requirements"
-                          className="min-h-[80px] pl-10 bg-amber-900/20 backdrop-blur-sm border-amber-500/30 focus:border-amber-400 focus:ring-amber-400/20 transition-all text-white placeholder:text-amber-200/50"
+                          className="min-h-[80px] pl-10 bg-sand/20 backdrop-blur-sm border-sand-dark/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-foreground placeholder:text-foreground/50"
                         />
-                        <div className="absolute left-3 top-2.5 text-amber-400">
+                        <div className="absolute left-3 top-2.5 text-skyblue">
                           <MapPin className="h-5 w-5" />
                         </div>
                       </div>
                     </div>
 
-                    <Button className="w-full bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white border-0 shadow-lg shadow-amber-800/30 transition-all duration-300 hover:shadow-amber-800/50 py-5 text-lg">
+                    <Button className="w-full bg-gradient-to-r from-terracotta to-terracotta-light hover:from-terracotta-dark hover:to-terracotta text-white border-0 shadow-lg shadow-terracotta-dark/30 transition-all duration-300 hover:shadow-terracotta-dark/50 py-5 text-lg">
                       Submit Request
                     </Button>
                   </form>
@@ -224,16 +224,16 @@ const Index = () => {
 
       {/* Instagram-style Featured Photos with Glass Effect */}
       <section id="gallery" className="py-16 relative">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-900/20 to-amber-800/20"></div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sand-light/60 to-sand/60"></div>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-3xl font-bold text-amber-100">Featured Photos</h2>
+            <h2 className="text-3xl font-bold text-foreground">Featured Photos</h2>
             <div className="flex gap-3">
               <Button
                 id="prev-btn"
                 variant="outline"
                 size="icon"
-                className="rounded-full border-2 border-amber-500/30 text-amber-100 hover:bg-amber-800/20 transition-all"
+                className="rounded-full border-2 border-skyblue/30 text-skyblue hover:bg-skyblue/10 transition-all"
               >
                 <ChevronLeft className="h-5 w-5" />
                 <span className="sr-only">Previous</span>
@@ -242,7 +242,7 @@ const Index = () => {
                 id="next-btn"
                 variant="outline"
                 size="icon"
-                className="rounded-full border-2 border-amber-500/30 text-amber-100 hover:bg-amber-800/20 transition-all"
+                className="rounded-full border-2 border-skyblue/30 text-skyblue hover:bg-skyblue/10 transition-all"
               >
                 <ChevronRight className="h-5 w-5" />
                 <span className="sr-only">Next</span>
@@ -270,11 +270,11 @@ const Index = () => {
 
       {/* Popular Tour Packages with Glass Cards */}
       <section id="tour-packages" className="py-16 relative">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-900/20 to-amber-800/20"></div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sand/60 to-sand-dark/30"></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-amber-100 inline-block mb-4">Popular Spiti Valley Tour Packages</h2>
-            <p className="text-blue-200 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground inline-block mb-4">Popular Spiti Valley Tour Packages</h2>
+            <p className="text-foreground/80 max-w-2xl mx-auto">
               Discover our handcrafted itineraries designed to showcase the best of Spiti Valley's breathtaking
               landscapes and rich cultural heritage.
             </p>
@@ -311,11 +311,11 @@ const Index = () => {
 
       {/* Testimonials Section */}
       <section id="about-us" className="py-16 relative">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-amber-900/20 to-amber-800/20"></div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sand-dark/30 to-sand/60"></div>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-amber-100 inline-block mb-4">What Our Travelers Say</h2>
-            <p className="text-blue-200 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-foreground inline-block mb-4">What Our Travelers Say</h2>
+            <p className="text-foreground/80 max-w-2xl mx-auto">
               Read about the experiences of travelers who have explored Spiti Valley with us.
             </p>
           </div>
@@ -349,7 +349,7 @@ const Index = () => {
       {/* Call to Action */}
       <section className="py-16 relative">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-900/80 via-amber-800/80 to-amber-700/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-skyblue-dark/80 via-skyblue/80 to-skyblue-light/80"></div>
           <img
             src="/placeholder.svg?height=1080&width=1920"
             alt="Spiti Valley"
@@ -363,7 +363,7 @@ const Index = () => {
               Book your Spiti Valley adventure today and create memories that will last a lifetime.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button className="bg-white text-amber-800 hover:bg-amber-50 border-0 shadow-lg shadow-black/20 transition-all duration-300 hover:shadow-black/30 px-8 py-6 text-lg hover:-translate-y-1">
+              <Button className="bg-terracotta text-white hover:bg-terracotta-dark border-0 shadow-lg shadow-terracotta-dark/20 transition-all duration-300 hover:shadow-terracotta-dark/30 px-8 py-6 text-lg hover:-translate-y-1">
                 Book Now
               </Button>
               <Button
@@ -378,12 +378,12 @@ const Index = () => {
       </section>
 
       {/* Footer with Glass Effect */}
-      <footer id="contact" className="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-700 text-white py-12">
+      <footer id="contact" className="bg-gradient-to-r from-skyblue-dark via-skyblue to-skyblue-light text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">SpitiBeyond</h3>
-              <p className="text-amber-100 mb-4">
+              <p className="text-offwhite mb-4">
                 Your trusted partner for exploring the magical landscapes of Spiti Valley with authentic experiences and
                 personalized service.
               </p>
@@ -391,7 +391,7 @@ const Index = () => {
                 {/* Social Media Icons */}
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-amber-800/40 flex items-center justify-center hover:bg-amber-800/60 transition-colors hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-skyblue-dark/40 flex items-center justify-center hover:bg-skyblue-dark/60 transition-colors hover:scale-110"
                 >
                   <span className="sr-only">Facebook</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -404,7 +404,7 @@ const Index = () => {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-amber-800/40 flex items-center justify-center hover:bg-amber-800/60 transition-colors hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-skyblue-dark/40 flex items-center justify-center hover:bg-skyblue-dark/60 transition-colors hover:scale-110"
                 >
                   <span className="sr-only">Instagram</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -417,7 +417,7 @@ const Index = () => {
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-amber-800/40 flex items-center justify-center hover:bg-amber-800/60 transition-colors hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-skyblue-dark/40 flex items-center justify-center hover:bg-skyblue-dark/60 transition-colors hover:scale-110"
                 >
                   <span className="sr-only">Twitter</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -430,32 +430,32 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#home" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#home" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#tour-packages" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#tour-packages" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Tour Packages
                   </a>
                 </li>
                 <li>
-                  <a href="#destinations" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#destinations" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Destinations
                   </a>
                 </li>
                 <li>
-                  <a href="#gallery" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#gallery" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Gallery
                   </a>
                 </li>
                 <li>
-                  <a href="#about-us" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#about-us" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#contact" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Contact
                   </a>
                 </li>
@@ -465,32 +465,32 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-4">Popular Destinations</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Key Monastery
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Chandratal Lake
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Dhankar Monastery
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Pin Valley
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Kibber Village
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-amber-100 hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  <a href="#" className="text-offwhite hover:text-white transition-colors hover:translate-x-1 inline-block">
                     Tabo Monastery
                   </a>
                 </li>
@@ -500,21 +500,21 @@ const Index = () => {
               <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
               <ul className="space-y-4">
                 <li className="flex items-start group hover:translate-x-1 transition-transform">
-                  <MapPin className="h-5 w-5 mr-2 mt-0.5 text-yellow-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-amber-100">123 Tourism Street, Shimla, Himachal Pradesh, India</span>
+                  <MapPin className="h-5 w-5 mr-2 mt-0.5 text-terracotta-light group-hover:scale-110 transition-transform" />
+                  <span className="text-offwhite">123 Tourism Street, Shimla, Himachal Pradesh, India</span>
                 </li>
                 <li className="flex items-center group hover:translate-x-1 transition-transform">
-                  <Phone className="h-5 w-5 mr-2 text-yellow-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-amber-100">+91 98765 43210</span>
+                  <Phone className="h-5 w-5 mr-2 text-terracotta-light group-hover:scale-110 transition-transform" />
+                  <span className="text-offwhite">+91 98765 43210</span>
                 </li>
                 <li className="flex items-center group hover:translate-x-1 transition-transform">
-                  <Mail className="h-5 w-5 mr-2 text-yellow-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-amber-100">info@spitibeyond.com</span>
+                  <Mail className="h-5 w-5 mr-2 text-terracotta-light group-hover:scale-110 transition-transform" />
+                  <span className="text-offwhite">info@spitibeyond.com</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-amber-700/30 mt-10 pt-6 text-center text-amber-100/60">
+          <div className="border-t border-skyblue-light/30 mt-10 pt-6 text-center text-offwhite/60">
             <p>© {new Date().getFullYear()} SpitiBeyond. All rights reserved.</p>
           </div>
         </div>
