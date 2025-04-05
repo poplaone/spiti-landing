@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Calendar, Users, Clock, MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,9 +18,9 @@ const Index = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   
   const bgImages = [
-    "https://images.unsplash.com/photo-1575553938047-abcfb6a714e2?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1624818202820-3d0a42ef06a0?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1601526318478-d3315d6e6645?q=80&w=1920&auto=format&fit=crop"
+    "/lovable-uploads/5aa2c141-1112-46da-8ccc-a8c4b7abfe68.png",
+    "/lovable-uploads/a9f730a8-3110-462d-a8a2-5c278debb69e.png",
+    "/lovable-uploads/1d1ec547-6051-4c4c-b9c0-5499b1de6eac.png"
   ];
   
   useEffect(() => {
