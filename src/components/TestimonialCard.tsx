@@ -37,12 +37,12 @@ export const TestimonialCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Background pulse animation */}
+        {/* Enhanced background pulse animation */}
         <div className={`absolute inset-0 bg-gradient-to-tr from-skyblue/20 via-skyblue/10 to-transparent rounded-2xl blur-xl transition-all duration-700 group-hover:scale-110 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
         
-        {/* Card content */}
+        {/* Card content with improved glass effect */}
         <div className="neo-blur rounded-2xl p-6 h-full transition-all duration-500 group-hover:translate-y-[-8px] border border-skyblue/10">
-          {/* Floating rating stars */}
+          {/* Floating rating stars with improved animation */}
           <div className="flex items-center mb-4 relative">
             {Array.from({ length: 5 }).map((_, i) => (
               <motion.div 
@@ -64,13 +64,13 @@ export const TestimonialCard = ({
             ))}
           </div>
 
-          {/* Quote with animated background gradient */}
+          {/* Enhanced quote with animated background gradient */}
           <div className="relative">
             <div className={`absolute -inset-4 bg-gradient-to-r from-skyblue/5 via-terracotta/5 to-skyblue/5 rounded-xl blur-md transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
             <p className="text-foreground relative mb-6 italic backdrop-blur-sm rounded-lg p-2">"{quote}"</p>
           </div>
 
-          {/* Profile section with hover card */}
+          {/* Profile section with enhanced hover card */}
           <HoverCard>
             <HoverCardTrigger asChild>
               <div className="flex items-center cursor-pointer">

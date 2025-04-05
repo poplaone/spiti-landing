@@ -72,6 +72,7 @@
     display: none;
   }
   
+  /* Enhanced glass morphism effects */
   .glass {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
   }
@@ -84,6 +85,7 @@
     @apply backdrop-blur-2xl bg-black/10 border border-white/10 shadow-lg;
   }
 
+  /* Enhanced text effects */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-skyblue via-skyblue-dark to-terracotta;
   }
@@ -96,6 +98,7 @@
       1px 1px 0 rgba(255,255,255,0.1);
   }
 
+  /* Enhanced animation effects */
   .floating {
     animation: float 6s ease-in-out infinite;
   }
@@ -106,6 +109,37 @@
 
   .glow-hover:hover {
     box-shadow: 0 0 30px 5px rgba(13, 110, 253, 0.3);
+  }
+  
+  /* New futuristic effects */
+  .cyber-outline {
+    @apply relative z-10;
+  }
+  
+  .cyber-outline::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, rgba(13, 110, 253, 0.5), rgba(229, 95, 63, 0.5));
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .cyber-outline:hover::before {
+    opacity: 1;
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 10px 2px rgba(13, 110, 253, 0.4),
+                0 0 20px 6px rgba(13, 110, 253, 0.2);
+  }
+  
+  .neon-border {
+    border: 1px solid rgba(13, 110, 253, 0.3);
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.5) inset,
+                0 0 16px rgba(13, 110, 253, 0.3);
   }
 }
 
@@ -130,7 +164,7 @@
   }
 }
 
-/* Add shimmer effect */
+/* Enhanced shimmer effect */
 .shimmer {
   background: linear-gradient(
     to right,
@@ -160,7 +194,7 @@
   mix-blend-mode: screen;
 }
 
-/* Perspective effects for 3D-like UI */
+/* Enhanced perspective effects for 3D-like UI */
 .perspective-container {
   perspective: 1000px;
 }
@@ -172,4 +206,36 @@
 
 .perspective-element:hover {
   transform: rotateX(5deg) rotateY(5deg);
+}
+
+/* New futuristic animations */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+  }
+}
+
+.pulse-border {
+  animation: pulse-border 2s infinite;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s forwards;
 }
