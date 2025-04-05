@@ -17,9 +17,9 @@ const Index = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
   
   const bgImages = [
-    "/placeholder.svg?height=1080&width=1920&text=Spiti+Valley+1",
-    "/placeholder.svg?height=1080&width=1920&text=Spiti+Valley+2",
-    "/placeholder.svg?height=1080&width=1920&text=Spiti+Valley+3"
+    "https://images.unsplash.com/photo-1575553938047-abcfb6a714e2?q=80&w=1920&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1624818202820-3d0a42ef06a0?q=80&w=1920&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1601526318478-d3315d6e6645?q=80&w=1920&auto=format&fit=crop"
   ];
   
   useEffect(() => {
@@ -271,12 +271,12 @@ const Index = () => {
               className="overflow-x-auto pb-6 hide-scrollbar"
             >
               <div className="flex gap-6 w-max">
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Key Monastery, Spiti Valley" index={0} />
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Chandratal Lake" index={1} />
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Dhankar Monastery" index={2} />
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Pin Valley" index={3} />
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Kunzum Pass" index={4} />
-                <FeaturedPhoto image="/placeholder.svg?height=500&width=500" caption="Tabo Monastery" index={5} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1586099079581-453560467971?q=80&w=500&auto=format&fit=crop" caption="Key Monastery, Spiti Valley" index={0} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1575553941284-31971401870d?q=80&w=500&auto=format&fit=crop" caption="Chandratal Lake" index={1} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1575553970165-232eb4d263cf?q=80&w=500&auto=format&fit=crop" caption="Dhankar Monastery" index={2} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1553465528-5a213ccc0c7b?q=80&w=500&auto=format&fit=crop" caption="Pin Valley" index={3} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1611641777052-ab12be36f39a?q=80&w=500&auto=format&fit=crop" caption="Kunzum Pass" index={4} />
+                <FeaturedPhoto image="https://images.unsplash.com/photo-1628087236657-baebefd6c58f?q=80&w=500&auto=format&fit=crop" caption="Tabo Monastery" index={5} />
               </div>
             </div>
           </div>
@@ -295,7 +295,7 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TourPackageCard
-              image="/placeholder.svg?height=400&width=600"
+              image="https://images.unsplash.com/photo-1468476396571-4d6f2a427ee7?q=80&w=600&auto=format&fit=crop"
               title="5 Days Spiti Valley Explorer"
               price="₹24,999"
               duration="5 Days / 4 Nights"
@@ -303,7 +303,7 @@ const Index = () => {
               index={0}
             />
             <TourPackageCard
-              image="/placeholder.svg?height=400&width=600"
+              image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=600&auto=format&fit=crop"
               title="7 Days Complete Spiti Circuit"
               price="₹34,999"
               duration="7 Days / 6 Nights"
@@ -311,7 +311,7 @@ const Index = () => {
               index={1}
             />
             <TourPackageCard
-              image="/placeholder.svg?height=400&width=600"
+              image="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=600&auto=format&fit=crop"
               title="10 Days Spiti & Kinnaur Valley"
               price="₹49,999"
               duration="10 Days / 9 Nights"
