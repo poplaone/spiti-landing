@@ -38,10 +38,10 @@ export const TestimonialCard = ({
         onMouseLeave={() => setIsHovered(false)}
       >
         {/* Enhanced background pulse animation */}
-        <div className={`absolute inset-0 bg-gradient-to-tr from-skyblue/20 via-skyblue/10 to-transparent rounded-2xl blur-xl transition-all duration-700 group-hover:scale-110 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-tr from-skyblue/30 via-skyblue/20 to-transparent rounded-2xl blur-xl transition-all duration-700 group-hover:scale-110 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
         
-        {/* Card content with improved glass effect */}
-        <div className="neo-blur rounded-2xl p-6 h-full transition-all duration-500 group-hover:translate-y-[-8px] border border-skyblue/10">
+        {/* Card content with intensified glass effect */}
+        <div className="neo-blur backdrop-blur-2xl bg-black/20 rounded-2xl p-6 h-full transition-all duration-500 group-hover:translate-y-[-8px] border border-white/20 text-white">
           {/* Floating rating stars with improved animation */}
           <div className="flex items-center mb-4 relative">
             {Array.from({ length: 5 }).map((_, i) => (
@@ -66,8 +66,8 @@ export const TestimonialCard = ({
 
           {/* Enhanced quote with animated background gradient */}
           <div className="relative">
-            <div className={`absolute -inset-4 bg-gradient-to-r from-skyblue/5 via-terracotta/5 to-skyblue/5 rounded-xl blur-md transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
-            <p className="text-foreground relative mb-6 italic backdrop-blur-sm rounded-lg p-2">"{quote}"</p>
+            <div className={`absolute -inset-4 bg-gradient-to-r from-skyblue/10 via-terracotta/10 to-skyblue/10 rounded-xl blur-md transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
+            <p className="text-white relative mb-6 italic backdrop-blur-sm rounded-lg p-2">"{quote}"</p>
           </div>
 
           {/* Profile section with enhanced hover card */}
@@ -75,27 +75,27 @@ export const TestimonialCard = ({
             <HoverCardTrigger asChild>
               <div className="flex items-center cursor-pointer">
                 <motion.div 
-                  className="w-10 h-10 rounded-full bg-gradient-to-r from-skyblue to-skyblue-dark flex items-center justify-center text-white font-bold"
+                  className="w-10 h-10 rounded-full bg-gradient-to-r from-skyblue to-skyblue-dark flex items-center justify-center text-white font-bold neon-glow"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   {name.charAt(0)}
                 </motion.div>
                 <div className="ml-3">
-                  <h4 className="font-semibold text-foreground">{name}</h4>
-                  <p className="text-sm text-foreground/70">{location}</p>
+                  <h4 className="font-semibold text-white">{name}</h4>
+                  <p className="text-sm text-white/70">{location}</p>
                 </div>
               </div>
             </HoverCardTrigger>
-            <HoverCardContent className="neo-blur border-skyblue/10 p-4">
+            <HoverCardContent className="neo-blur backdrop-blur-2xl bg-black/40 border-white/20 p-4 text-white">
               <div className="flex flex-col gap-2 text-left">
-                <p className="text-sm text-foreground/80">Traveled to Spiti Valley</p>
+                <p className="text-sm text-white/80">Traveled to Spiti Valley</p>
                 <div className="flex items-center gap-1">
                   {Array.from({ length: rating }).map((_, i) => (
                     <Star key={i} className="w-3 h-3 fill-terracotta text-terracotta" />
                   ))}
                 </div>
-                <p className="text-xs text-foreground/60">Verified review</p>
+                <p className="text-xs text-white/60">Verified review</p>
               </div>
             </HoverCardContent>
           </HoverCard>

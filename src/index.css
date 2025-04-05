@@ -72,17 +72,17 @@
     display: none;
   }
   
-  /* Enhanced glass morphism effects */
+  /* Advanced glass morphism effects */
   .glass {
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
   }
   
   .glass-morphism {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
+    @apply backdrop-blur-xl bg-white/10 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)];
   }
   
   .neo-blur {
-    @apply backdrop-blur-2xl bg-black/10 border border-white/10 shadow-lg;
+    @apply backdrop-blur-2xl bg-black/20 border border-white/10 shadow-lg;
   }
 
   /* Enhanced text effects */
@@ -137,7 +137,7 @@
   }
   
   .neon-border {
-    border: 1px solid rgba(13, 110, 253, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 8px rgba(13, 110, 253, 0.5) inset,
                 0 0 16px rgba(13, 110, 253, 0.3);
   }
@@ -238,4 +238,46 @@
 
 .animate-slide-up {
   animation: slide-up 0.5s forwards;
+}
+
+/* Background transition effect */
+@keyframes fade-in-out {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.bg-fade {
+  animation: fade-in-out 6s infinite;
+}
+
+/* Glass element hover effects */
+.glass-card {
+  @apply backdrop-blur-xl bg-white/5 border border-white/20 rounded-xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply bg-white/10 border-white/30 shadow-lg;
+  transform: translateY(-5px);
+}
+
+/* Futuristic highlight effect */
+.highlight-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, rgba(13, 110, 253, 0.7), rgba(229, 95, 63, 0.7)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  animation: highlight-pulse 2s infinite;
+}
+
+@keyframes highlight-pulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
 }
