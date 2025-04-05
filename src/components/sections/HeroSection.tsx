@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Calendar, Users, Clock, MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,16 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-
-  return (
-    <section id="home" className="relative min-h-screen pt-20">
+  return <section id="home" className="relative min-h-screen pt-20">
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-80px)]">
           <div className="text-center lg:text-left mt-16 lg:mt-0">
@@ -32,10 +27,7 @@ const HeroSection = () => {
               <Button className="neon-glow bg-gradient-to-r from-terracotta to-terracotta-light hover:from-terracotta-dark hover:to-terracotta text-white border-0 shadow-lg shadow-terracotta-dark/30 transition-all duration-300 hover:shadow-terracotta-dark/50 px-8 py-6 text-lg">
                 Explore Packages
               </Button>
-              <Button
-                variant="outline"
-                className="neon-border border-2 border-white/30 text-white hover:bg-skyblue/20 px-8 py-6 text-lg"
-              >
+              <Button variant="outline" className="neon-border border-2 border-white/30 text-white hover:bg-skyblue/20 px-8 py-6 text-lg">
                 Learn More
               </Button>
             </div>
@@ -48,15 +40,9 @@ const HeroSection = () => {
                 <h2 className="text-2xl font-bold text-center mb-6 text-white">Get Free Tour Plan</h2>
                 <form className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="fullName" className="text-white">
-                      Full Name
-                    </Label>
+                    
                     <div className="relative">
-                      <Input
-                        id="fullName"
-                        placeholder="Your full name"
-                        className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                      />
+                      <Input id="fullName" placeholder="Your full name" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                       <div className="absolute left-3 top-2.5 text-skyblue">
                         <Users className="h-5 w-5" />
                       </div>
@@ -64,16 +50,9 @@ const HeroSection = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white">
-                      Email Id.
-                    </Label>
+                    
                     <div className="relative">
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="Your email address"
-                        className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                      />
+                      <Input id="email" type="email" placeholder="Your email address" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                       <div className="absolute left-3 top-2.5 text-skyblue">
                         <Mail className="h-5 w-5" />
                       </div>
@@ -81,16 +60,9 @@ const HeroSection = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-white">
-                      Contact No.
-                    </Label>
+                    
                     <div className="relative">
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="Your phone number"
-                        className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                      />
+                      <Input id="phone" type="tel" placeholder="Your phone number" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                       <div className="absolute left-3 top-2.5 text-skyblue">
                         <Phone className="h-5 w-5" />
                       </div>
@@ -103,11 +75,7 @@ const HeroSection = () => {
                         Duration
                       </Label>
                       <div className="relative">
-                        <Input
-                          id="duration"
-                          placeholder="Days"
-                          className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                        />
+                        <Input id="duration" placeholder="Days" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                         <div className="absolute left-3 top-2.5 text-skyblue">
                           <Clock className="h-5 w-5" />
                         </div>
@@ -119,13 +87,7 @@ const HeroSection = () => {
                         Adults
                       </Label>
                       <div className="relative">
-                        <Input
-                          id="adults"
-                          type="number"
-                          min="1"
-                          defaultValue="2"
-                          className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                        />
+                        <Input id="adults" type="number" min="1" defaultValue="2" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                         <div className="absolute left-3 top-2.5 text-skyblue">
                           <Users className="h-5 w-5" />
                         </div>
@@ -138,11 +100,7 @@ const HeroSection = () => {
                       Travel Date
                     </Label>
                     <div className="relative">
-                      <Input
-                        id="travelDate"
-                        type="date"
-                        className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                      />
+                      <Input id="travelDate" type="date" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                       <div className="absolute left-3 top-2.5 text-skyblue">
                         <Calendar className="h-5 w-5" />
                       </div>
@@ -154,11 +112,7 @@ const HeroSection = () => {
                       Your Message
                     </Label>
                     <div className="relative">
-                      <Textarea
-                        id="message"
-                        placeholder="Tell us about your requirements"
-                        className="min-h-[80px] pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50"
-                      />
+                      <Textarea id="message" placeholder="Tell us about your requirements" className="min-h-[80px] pl-10 neo-blur bg-transparent border-white/30 focus:border-skyblue focus:ring-skyblue/20 transition-all text-white placeholder:text-white/50" />
                       <div className="absolute left-3 top-2.5 text-skyblue">
                         <MapPin className="h-5 w-5" />
                       </div>
@@ -174,8 +128,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
