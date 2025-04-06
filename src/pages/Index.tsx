@@ -10,6 +10,7 @@ import TourPackagesCarousel from '@/components/TourPackagesCarousel';
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 
 const Index = () => {
+  // Optimized image URLs with width parameters
   const bgImages = [
     "/lovable-uploads/5aa2c141-1112-46da-8ccc-a8c4b7abfe68.png",
     "/lovable-uploads/a9f730a8-3110-462d-a8a2-5c278debb69e.png",
