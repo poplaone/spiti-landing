@@ -21,10 +21,10 @@ const Index = () => {
       <BackgroundSlideshow images={bgImages} />
       <Navbar />
       
-      <div className="flex-grow flex flex-col space-y-2 md:space-y-4">
+      <div className="flex-grow flex flex-col space-y-0">
         <HeroSection />
         
-        {/* Tour Package Sections with reduced spacing */}
+        {/* Tour Package Sections with minimal spacing */}
         <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
         <TourPackagesCarousel title="Spiti Adventure Tour Packages" packages={adventurePackages} />
         <TourPackagesCarousel title="Spiti Winter Wonderland" packages={winterPackages} />
