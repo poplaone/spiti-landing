@@ -3,10 +3,11 @@ import { Navbar } from '@/components/Navbar';
 import BackgroundSlideshow from '@/components/BackgroundSlideshow';
 import HeroSection from '@/components/sections/HeroSection';
 import GallerySection from '@/components/sections/GallerySection';
-import TourPackagesSection from '@/components/sections/TourPackagesSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CallToActionSection from '@/components/sections/CallToActionSection';
 import FooterSection from '@/components/sections/FooterSection';
+import TourPackagesCarousel from '@/components/TourPackagesCarousel';
+import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 
 const Index = () => {
   const bgImages = [
@@ -20,8 +21,13 @@ const Index = () => {
       <BackgroundSlideshow images={bgImages} />
       <Navbar />
       <HeroSection />
+      
+      {/* Tour Package Sections */}
+      <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
+      <TourPackagesCarousel title="Spiti Adventure Tour Packages" packages={adventurePackages} />
+      <TourPackagesCarousel title="Spiti Winter Wonderland" packages={winterPackages} />
+      
       <GallerySection />
-      <TourPackagesSection />
       <TestimonialsSection />
       <CallToActionSection />
       <FooterSection />
