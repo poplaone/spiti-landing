@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight, CheckCircle2, Compass, MountainSnow, Plane, Sparkles, Heart, PlaneTakeoff, Mountain, Footprints, Palmtree, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,25 +10,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 import { motion } from "framer-motion";
-
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [visitedBefore, setVisitedBefore] = useState<string | null>(null);
   const [budget, setBudget] = useState<string | null>(null);
-  
+
   // Combine all packages for the dropdown
-  const allPackages = [
-    ...bestSellingPackages,
-    ...adventurePackages,
-    ...winterPackages
-  ];
-  
+  const allPackages = [...bestSellingPackages, ...adventurePackages, ...winterPackages];
   useEffect(() => {
     setIsLoaded(true);
   }, []);
-  
   const handleNextStep = () => {
     if (currentStep === 2 && budget) {
       // When all questions are answered, open the form
@@ -42,181 +34,137 @@ const HeroSection = () => {
       setCurrentStep(2);
     }
   };
-  
   const renderQuizContent = () => {
     switch (currentStep) {
       case 1:
-        return (
-          <motion.div 
-            className="space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+        return <motion.div className="space-y-4" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }}>
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
               <Compass className="h-5 w-5 text-mountain-light animate-pulse" />
               <span>1. Have you ever been to Spiti before?</span>
             </h3>
             <div className="grid grid-cols-2 gap-4">
-              <Button
-                variant={visitedBefore === 'yes' ? 'default' : 'outline'}
-                className={`py-6 relative overflow-hidden transition-all duration-300 ${
-                  visitedBefore === 'yes' 
-                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
-                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
-                }`}
-                onClick={() => setVisitedBefore('yes')}
-              >
-                {visitedBefore === 'yes' && (
-                  <motion.div 
-                    className="absolute inset-0 bg-mountain-light/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                  />
-                )}
+              <Button variant={visitedBefore === 'yes' ? 'default' : 'outline'} className={`py-6 relative overflow-hidden transition-all duration-300 ${visitedBefore === 'yes' ? 'bg-mountain hover:bg-mountain-dark neon-glow' : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'}`} onClick={() => setVisitedBefore('yes')}>
+                {visitedBefore === 'yes' && <motion.div className="absolute inset-0 bg-mountain-light/20" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: [0, 0.5, 0]
+              }} transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />}
                 <div className="flex items-center justify-center gap-2">
                   <Footprints className="h-5 w-5" />
                   <span>Yes, I've been!</span>
-                  {visitedBefore === 'yes' && (
-                    <CheckCircle2 className="h-5 w-5 ml-1 text-white" />
-                  )}
+                  {visitedBefore === 'yes' && <CheckCircle2 className="h-5 w-5 ml-1 text-white" />}
                 </div>
               </Button>
-              <Button
-                variant={visitedBefore === 'no' ? 'default' : 'outline'}
-                className={`py-6 relative overflow-hidden transition-all duration-300 ${
-                  visitedBefore === 'no' 
-                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
-                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
-                }`}
-                onClick={() => setVisitedBefore('no')}
-              >
-                {visitedBefore === 'no' && (
-                  <motion.div 
-                    className="absolute inset-0 bg-mountain-light/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                  />
-                )}
+              <Button variant={visitedBefore === 'no' ? 'default' : 'outline'} className={`py-6 relative overflow-hidden transition-all duration-300 ${visitedBefore === 'no' ? 'bg-mountain hover:bg-mountain-dark neon-glow' : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'}`} onClick={() => setVisitedBefore('no')}>
+                {visitedBefore === 'no' && <motion.div className="absolute inset-0 bg-mountain-light/20" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: [0, 0.5, 0]
+              }} transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />}
                 <div className="flex items-center justify-center gap-2">
                   <PlaneTakeoff className="h-5 w-5" />
                   <span>No, first time.</span>
-                  {visitedBefore === 'no' && (
-                    <CheckCircle2 className="h-5 w-5 ml-1 text-white" />
-                  )}
+                  {visitedBefore === 'no' && <CheckCircle2 className="h-5 w-5 ml-1 text-white" />}
                 </div>
               </Button>
             </div>
-          </motion.div>
-        );
+          </motion.div>;
       case 2:
-        return (
-          <motion.div 
-            className="space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+        return <motion.div className="space-y-4" initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.5
+        }}>
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
               <Zap className="h-5 w-5 text-forest-light animate-pulse" />
               <span>2. What's your budget?</span>
             </h3>
             <div className="grid grid-cols-3 gap-4">
-              <Button
-                variant={budget === 'budget' ? 'default' : 'outline'}
-                className={`py-6 relative overflow-hidden transition-all duration-300 ${
-                  budget === 'budget' 
-                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
-                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
-                }`}
-                onClick={() => setBudget('budget')}
-              >
-                {budget === 'budget' && (
-                  <motion.div 
-                    className="absolute inset-0 bg-mountain-light/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                  />
-                )}
+              <Button variant={budget === 'budget' ? 'default' : 'outline'} className={`py-6 relative overflow-hidden transition-all duration-300 ${budget === 'budget' ? 'bg-mountain hover:bg-mountain-dark neon-glow' : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'}`} onClick={() => setBudget('budget')}>
+                {budget === 'budget' && <motion.div className="absolute inset-0 bg-mountain-light/20" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: [0, 0.5, 0]
+              }} transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />}
                 <div className="flex flex-col items-center justify-center gap-1">
                   <Palmtree className="h-5 w-5 mb-1" />
                   <span>Budget</span>
-                  {budget === 'budget' && (
-                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
-                  )}
+                  {budget === 'budget' && <CheckCircle2 className="h-5 w-5 text-white mt-1" />}
                 </div>
               </Button>
-              <Button
-                variant={budget === 'economic' ? 'default' : 'outline'}
-                className={`py-6 relative overflow-hidden transition-all duration-300 ${
-                  budget === 'economic' 
-                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
-                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
-                }`}
-                onClick={() => setBudget('economic')}
-              >
-                {budget === 'economic' && (
-                  <motion.div 
-                    className="absolute inset-0 bg-mountain-light/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                  />
-                )}
+              <Button variant={budget === 'economic' ? 'default' : 'outline'} className={`py-6 relative overflow-hidden transition-all duration-300 ${budget === 'economic' ? 'bg-mountain hover:bg-mountain-dark neon-glow' : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'}`} onClick={() => setBudget('economic')}>
+                {budget === 'economic' && <motion.div className="absolute inset-0 bg-mountain-light/20" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: [0, 0.5, 0]
+              }} transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />}
                 <div className="flex flex-col items-center justify-center gap-1">
                   <Mountain className="h-5 w-5 mb-1" />
                   <span>Economic</span>
-                  {budget === 'economic' && (
-                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
-                  )}
+                  {budget === 'economic' && <CheckCircle2 className="h-5 w-5 text-white mt-1" />}
                 </div>
               </Button>
-              <Button
-                variant={budget === 'luxury' ? 'default' : 'outline'}
-                className={`py-6 relative overflow-hidden transition-all duration-300 ${
-                  budget === 'luxury' 
-                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
-                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
-                }`}
-                onClick={() => setBudget('luxury')}
-              >
-                {budget === 'luxury' && (
-                  <motion.div 
-                    className="absolute inset-0 bg-mountain-light/20"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: [0, 0.5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-                  />
-                )}
+              <Button variant={budget === 'luxury' ? 'default' : 'outline'} className={`py-6 relative overflow-hidden transition-all duration-300 ${budget === 'luxury' ? 'bg-mountain hover:bg-mountain-dark neon-glow' : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'}`} onClick={() => setBudget('luxury')}>
+                {budget === 'luxury' && <motion.div className="absolute inset-0 bg-mountain-light/20" initial={{
+                opacity: 0
+              }} animate={{
+                opacity: [0, 0.5, 0]
+              }} transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />}
                 <div className="flex flex-col items-center justify-center gap-1">
                   <Sparkles className="h-5 w-5 mb-1" />
                   <span>Luxury</span>
-                  {budget === 'luxury' && (
-                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
-                  )}
+                  {budget === 'luxury' && <CheckCircle2 className="h-5 w-5 text-white mt-1" />}
                 </div>
               </Button>
             </div>
-          </motion.div>
-        );
+          </motion.div>;
       default:
         return null;
     }
   };
-  
-  return (
-    <section id="home" className="relative min-h-[90vh] pt-16">
+  return <section id="home" className="relative min-h-[90vh] pt-16">
       <div className="container mx-auto px-4 py-4 md:py-8">
         <div className="flex flex-col items-center lg:items-start min-h-[calc(90vh-80px)] justify-center">
           <div className={`inline-block px-6 py-2 mb-4 rounded-full neo-blur border border-mountain/30 text-white font-medium transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <motion.div 
-              className="flex items-center gap-2"
-              animate={{ scale: [1, 1.03, 1] }}
-              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-            >
+            <motion.div className="flex items-center gap-2" animate={{
+            scale: [1, 1.03, 1]
+          }} transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "loop"
+          }}>
               <MountainSnow className="h-4 w-4 text-mountain-light" />
               Discover the Himalayan Wonder
             </motion.div>
@@ -232,33 +180,37 @@ const HeroSection = () => {
           <Card className={`w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-white/10 overflow-hidden rounded-xl text-white transition-all duration-700 delay-300 shadow-xl hover:shadow-mountain/20 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <CardContent className="p-6 relative">
               {/* Decorative elements */}
-              <motion.div 
-                className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.3, scale: 1 }}
-                transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-              >
+              <motion.div className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none" initial={{
+              opacity: 0,
+              scale: 0.8
+            }} animate={{
+              opacity: 0.3,
+              scale: 1
+            }} transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "loop"
+            }}>
                 <Mountain className="w-full h-full text-mountain-light" />
               </motion.div>
               
               {renderQuizContent()}
               
-              <motion.div 
-                className="mt-6 flex justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button 
-                  onClick={handleNextStep}
-                  disabled={(currentStep === 1 && !visitedBefore) || (currentStep === 2 && !budget)}
-                  className="bg-mountain hover:bg-mountain-dark text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300"
-                >
-                  <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-mountain-light/20 to-transparent" 
-                    initial={{ x: '-100%' }}
-                    animate={{ x: '100%' }}
-                    transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-                  />
+              <motion.div className="mt-6 flex justify-center" whileHover={{
+              scale: 1.05
+            }} whileTap={{
+              scale: 0.95
+            }}>
+                <Button onClick={handleNextStep} disabled={currentStep === 1 && !visitedBefore || currentStep === 2 && !budget} className="text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300 bg-yellow-500 hover:bg-yellow-400">
+                  <motion.span className="absolute inset-0 bg-gradient-to-r from-mountain-light/20 to-transparent" initial={{
+                  x: '-100%'
+                }} animate={{
+                  x: '100%'
+                }} transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "loop"
+                }} />
                   <span className="relative z-10">Next Step</span>
                   <ChevronRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -315,9 +267,7 @@ const HeroSection = () => {
                 </SelectTrigger>
                 <SelectContent className="neo-blur bg-black/80 backdrop-blur-xl border-white/20 text-white">
                   <SelectItem value="none">I'm not sure yet</SelectItem>
-                  {allPackages.map((pkg, index) => (
-                    <SelectItem key={index} value={pkg.title}>{pkg.title}</SelectItem>
-                  ))}
+                  {allPackages.map((pkg, index) => <SelectItem key={index} value={pkg.title}>{pkg.title}</SelectItem>)}
                 </SelectContent>
               </Select>
             </div>
@@ -334,17 +284,21 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
+            <motion.div whileHover={{
+            scale: 1.02
+          }} whileTap={{
+            scale: 0.98
+          }}>
               <Button className="w-full neon-glow bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 py-5 text-lg relative overflow-hidden">
-                <motion.span 
-                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0" 
-                  initial={{ x: '-100%' }}
-                  animate={{ x: '100%' }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
-                />
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0" initial={{
+                x: '-100%'
+              }} animate={{
+                x: '100%'
+              }} transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop"
+              }} />
                 <Heart className="h-5 w-5 mr-2" />
                 <span className="relative z-10">Submit Request</span>
               </Button>
@@ -352,8 +306,6 @@ const HeroSection = () => {
           </form>
         </DialogContent>
       </Dialog>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
