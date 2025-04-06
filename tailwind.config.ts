@@ -53,29 +53,43 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))"
         },
-        // Updated luxury color palette with higher contrast
+        // Updated color scheme from the lake image
+        mountain: {
+          dark: "#0E2636", // Dark teal/navy from image
+          DEFAULT: "#1D5573", // Medium blue from image
+          light: "#83A5A7"   // Light blue-green from image
+        },
+        forest: {
+          dark: "#365D49", // Dark green from image
+          DEFAULT: "#5A8C4B", // Medium green from image
+          light: "#A0C050"   // Bright lime green from image
+        },
+        sky: {
+          DEFAULT: "#D6E7F5", // Light blue from image
+        },
+        // Legacy colors kept for backward compatibility
         skyblue: {
-          light: "#61A9F1", // Brighter, more saturated blue
-          DEFAULT: "#0D6EFD", // Rich, vibrant blue
-          dark: "#0B5ED7", // Deeper blue for depth
+          light: "#61A9F1", 
+          DEFAULT: "#1D5573", // Updated to match mountain
+          dark: "#0E2636",    // Updated to match mountain dark
         },
         sand: {
-          light: "#F8F4E9", // Creamy off-white
-          DEFAULT: "#E8E0CC", // Soft, warm beige
-          dark: "#D0C8B0", // Deeper neutral for contrast
+          light: "#F8F4E9", 
+          DEFAULT: "#E8E0CC", 
+          dark: "#D0C8B0", 
         },
         terracotta: {
-          light: "#FF7A5A", // Bright coral/terracotta
-          DEFAULT: "#E64A19", // Deep, rich terracotta
-          dark: "#BF360C", // Dark terracotta for strong contrast
+          light: "#5A8C4B", // Updated to match forest
+          DEFAULT: "#365D49", // Updated to match forest dark
+          dark: "#264539",    // Darkened forest
         },
         offwhite: {
-          DEFAULT: "#F9F7F3", // Ultra-light cream/off-white
+          DEFAULT: "#F9F7F3", 
         },
         olive: {
-          light: "#AEC09A", // Lighter olive green
-          DEFAULT: "#879D77", // Mid-tone olive 
-          dark: "#5F6D50", // Deep olive for contrast
+          light: "#A0C050", // Updated to match forest light
+          DEFAULT: "#5A8C4B", // Updated to match forest
+          dark: "#365D49",    // Updated to match forest dark
         },
       },
       borderRadius: {

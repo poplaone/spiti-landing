@@ -8,6 +8,7 @@ import {
   CarouselNext
 } from "@/components/ui/carousel";
 import { EnhancedTourCard } from "@/components/EnhancedTourCard";
+import { useMediaQuery } from "@/hooks/use-mobile";
 
 interface TourPackage {
   image: string;
@@ -37,6 +38,17 @@ interface TourPackagesCarouselProps {
 const TourPackagesCarousel = ({ title, packages }: TourPackagesCarouselProps) => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [api, setApi] = useState<{ scrollNext: () => void } | null>(null);
+  
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isTablet = useMediaQuery("(min-width: 769px) and (max-width: 1279px)");
+  const isDesktop = useMediaQuery("(min-width: 1280px)");
+  
+  const getItemsPerView = () => {
+    if (isMobile) return 1;
+    if (isTablet) return 2;
+    if (isDesktop) return 3;
+    return 1; // Default fallback
+  };
 
   // Auto-play functionality
   useEffect(() => {
@@ -50,31 +62,39 @@ const TourPackagesCarousel = ({ title, packages }: TourPackagesCarouselProps) =>
   }, [api, autoPlay]);
 
   return (
-    <section className="py-16 relative" id={title.toLowerCase().replace(/\s+/g, '-')}>
+    <section className="py-8 relative" id={title.toLowerCase().replace(/\s+/g, '-')}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white inline-block mb-4 relative">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white inline-block mb-3 relative">
             {title}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-terracotta to-skyblue"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-forest to-forest-light"></div>
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <p className="text-white/80 max-w-2xl mx-auto text-sm md:text-base">
             Discover our handcrafted itineraries designed for unforgettable Himalayan adventures.
           </p>
         </div>
 
         <Carousel 
           setApi={setApi}
-          className="mx-auto max-w-5xl"
+          className="mx-auto max-w-7xl"
           opts={{
             align: "start",
             loop: true,
+            slidesToScroll: getItemsPerView()
           }}
           onMouseEnter={() => setAutoPlay(false)}
           onMouseLeave={() => setAutoPlay(true)}
         >
           <CarouselContent>
             {packages.map((pkg, index) => (
-              <CarouselItem key={index} className="pl-4 md:basis-full lg:basis-full">
+              <CarouselItem 
+                key={index} 
+                className={`pl-4 ${
+                  isMobile ? 'basis-full' : 
+                  isTablet ? 'basis-1/2' : 
+                  'basis-1/3'
+                }`}
+              >
                 <EnhancedTourCard
                   image={pkg.image}
                   title={pkg.title}
@@ -89,8 +109,8 @@ const TourPackagesCarousel = ({ title, packages }: TourPackagesCarouselProps) =>
             ))}
           </CarouselContent>
           
-          <CarouselPrevious className="left-0 lg:-left-16 bg-black/30 hover:bg-black/50 border-white/20 text-white" />
-          <CarouselNext className="right-0 lg:-right-16 bg-black/30 hover:bg-black/50 border-white/20 text-white" />
+          <CarouselPrevious className="left-0 lg:-left-12 bg-black/50 hover:bg-black/70 border-white/20 text-white" />
+          <CarouselNext className="right-0 lg:-right-12 bg-black/50 hover:bg-black/70 border-white/20 text-white" />
         </Carousel>
       </div>
     </section>

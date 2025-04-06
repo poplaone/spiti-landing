@@ -17,20 +17,23 @@ const Index = () => {
   ];
   
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen flex flex-col">
       <BackgroundSlideshow images={bgImages} />
       <Navbar />
-      <HeroSection />
       
-      {/* Tour Package Sections */}
-      <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
-      <TourPackagesCarousel title="Spiti Adventure Tour Packages" packages={adventurePackages} />
-      <TourPackagesCarousel title="Spiti Winter Wonderland" packages={winterPackages} />
-      
-      <GallerySection />
-      <TestimonialsSection />
-      <CallToActionSection />
-      <FooterSection />
+      <div className="flex-grow flex flex-col space-y-2 md:space-y-4">
+        <HeroSection />
+        
+        {/* Tour Package Sections with reduced spacing */}
+        <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
+        <TourPackagesCarousel title="Spiti Adventure Tour Packages" packages={adventurePackages} />
+        <TourPackagesCarousel title="Spiti Winter Wonderland" packages={winterPackages} />
+        
+        <GallerySection />
+        <TestimonialsSection />
+        <CallToActionSection />
+        <FooterSection />
+      </div>
     </main>
   );
 };

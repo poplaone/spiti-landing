@@ -2,10 +2,25 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Users, Mail, Phone, MapPin } from "lucide-react";
+import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  // Combine all packages for the dropdown
+  const allPackages = [
+    ...bestSellingPackages,
+    ...adventurePackages,
+    ...winterPackages
+  ];
   
   useEffect(() => {
     const handleScroll = () => {
@@ -22,14 +37,14 @@ export const Navbar = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-skyblue/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      scrolled ? 'bg-mountain/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <div className="font-bold text-2xl bg-gradient-to-r from-skyblue to-skyblue-dark bg-clip-text text-transparent animate-fade-in">
+        <div className="flex items-center justify-between h-16">
+          <div className="font-bold text-2xl bg-gradient-to-r from-sky to-mountain-light bg-clip-text text-transparent animate-fade-in">
             SpitiBeyond
           </div>
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {["Home", "Tour Packages", "Destinations", "Gallery", "About Us", "Contact"].map((item, index) => (
               <a
                 key={item}
@@ -38,17 +53,21 @@ export const Navbar = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-terracotta to-terracotta-light transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-forest to-forest-light transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="bg-gradient-to-r from-terracotta to-terracotta-light hover:from-terracotta-dark hover:to-terracotta text-white border-0 shadow-lg shadow-terracotta-dark/30 transition-all duration-300 hover:shadow-terracotta-dark/50 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <Button 
+              className="bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 animate-fade-in" 
+              style={{ animationDelay: '0.6s' }}
+              onClick={() => setIsFormOpen(true)}
+            >
               Book Now
             </Button>
             <Button
               variant="outline"
-              className="md:hidden border border-skyblue/30 text-offwhite hover:bg-skyblue/20 animate-fade-in"
+              className="md:hidden border border-mountain-light/30 text-offwhite hover:bg-mountain/20 animate-fade-in"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               style={{ animationDelay: '0.7s' }}
             >
@@ -60,7 +79,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Dropdown with animation */}
       <div 
-        className={`md:hidden bg-gradient-to-b from-skyblue/95 to-skyblue-dark/95 backdrop-blur-lg border-b border-skyblue-light/30 absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`md:hidden bg-gradient-to-b from-mountain/95 to-mountain-dark/95 backdrop-blur-lg border-b border-mountain-light/30 absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${
           mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
@@ -70,7 +89,7 @@ export const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className={`text-sm font-medium text-offwhite hover:text-white transition-colors py-2 border-b border-skyblue-light/50 transform translate-y-4 opacity-0 ${mobileMenuOpen ? 'animate-slide-up' : ''}`}
+                className={`text-sm font-medium text-offwhite hover:text-white transition-colors py-2 border-b border-mountain-light/50 transform translate-y-4 opacity-0 ${mobileMenuOpen ? 'animate-slide-up' : ''}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -80,6 +99,79 @@ export const Navbar = () => {
           </nav>
         </div>
       </div>
+      
+      {/* Tour Request Dialog */}
+      <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
+        <DialogContent className="neo-blur backdrop-blur-xl bg-black/60 border-0 overflow-hidden rounded-2xl text-white max-w-md">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-mountain via-mountain-light to-mountain"></div>
+          <DialogTitle className="text-2xl font-bold text-center text-white">Get Free Tour Plan</DialogTitle>
+          <DialogDescription className="text-white/80 text-center">
+            Fill out this form and we'll get back to you with a customized tour plan.
+          </DialogDescription>
+          
+          <form className="space-y-4 mt-2">
+            <div className="space-y-2">
+              <div className="relative">
+                <Input id="fullName" placeholder="Your full name" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-mountain">
+                  <Users className="h-5 w-5" />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="relative">
+                <Input id="email" type="email" placeholder="Your email address" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-mountain">
+                  <Mail className="h-5 w-5" />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="relative">
+                <Input id="phone" type="tel" placeholder="Your phone number" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-mountain">
+                  <Phone className="h-5 w-5" />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="package" className="text-white">
+                Choose a Package
+              </Label>
+              <Select>
+                <SelectTrigger className="neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white">
+                  <SelectValue placeholder="Select a tour package" />
+                </SelectTrigger>
+                <SelectContent className="neo-blur bg-black/80 backdrop-blur-xl border-white/20 text-white">
+                  <SelectItem value="none">I'm not sure yet</SelectItem>
+                  {allPackages.map((pkg, index) => (
+                    <SelectItem key={index} value={pkg.title}>{pkg.title}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-white">
+                Your Message
+              </Label>
+              <div className="relative">
+                <Textarea id="message" placeholder="Tell us about your requirements" className="min-h-[80px] pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-mountain">
+                  <MapPin className="h-5 w-5" />
+                </div>
+              </div>
+            </div>
+
+            <Button className="w-full neon-glow bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 py-5 text-lg">
+              Submit Request
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 };
