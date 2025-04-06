@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight } from "lucide-react";
+import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight, CheckCircle2, Compass, MountainSnow, Plane, Sparkles, Heart, PlaneTakeoff, Mountain, Footprints, Palmtree, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -46,54 +47,160 @@ const HeroSection = () => {
     switch (currentStep) {
       case 1:
         return (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">1. Have you ever been to Spiti before?</h3>
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Compass className="h-5 w-5 text-mountain-light animate-pulse" />
+              <span>1. Have you ever been to Spiti before?</span>
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               <Button
                 variant={visitedBefore === 'yes' ? 'default' : 'outline'}
-                className={`py-6 ${visitedBefore === 'yes' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                className={`py-6 relative overflow-hidden transition-all duration-300 ${
+                  visitedBefore === 'yes' 
+                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
+                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
+                }`}
                 onClick={() => setVisitedBefore('yes')}
               >
-                Yes, I've been!
+                {visitedBefore === 'yes' && (
+                  <motion.div 
+                    className="absolute inset-0 bg-mountain-light/20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+                  />
+                )}
+                <div className="flex items-center justify-center gap-2">
+                  <Footprints className="h-5 w-5" />
+                  <span>Yes, I've been!</span>
+                  {visitedBefore === 'yes' && (
+                    <CheckCircle2 className="h-5 w-5 ml-1 text-white" />
+                  )}
+                </div>
               </Button>
               <Button
                 variant={visitedBefore === 'no' ? 'default' : 'outline'}
-                className={`py-6 ${visitedBefore === 'no' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                className={`py-6 relative overflow-hidden transition-all duration-300 ${
+                  visitedBefore === 'no' 
+                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
+                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
+                }`}
                 onClick={() => setVisitedBefore('no')}
               >
-                No, first time.
+                {visitedBefore === 'no' && (
+                  <motion.div 
+                    className="absolute inset-0 bg-mountain-light/20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+                  />
+                )}
+                <div className="flex items-center justify-center gap-2">
+                  <PlaneTakeoff className="h-5 w-5" />
+                  <span>No, first time.</span>
+                  {visitedBefore === 'no' && (
+                    <CheckCircle2 className="h-5 w-5 ml-1 text-white" />
+                  )}
+                </div>
               </Button>
             </div>
-          </div>
+          </motion.div>
         );
       case 2:
         return (
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">2. What's your budget?</h3>
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Zap className="h-5 w-5 text-forest-light animate-pulse" />
+              <span>2. What's your budget?</span>
+            </h3>
             <div className="grid grid-cols-3 gap-4">
               <Button
                 variant={budget === 'budget' ? 'default' : 'outline'}
-                className={`py-6 ${budget === 'budget' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                className={`py-6 relative overflow-hidden transition-all duration-300 ${
+                  budget === 'budget' 
+                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
+                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
+                }`}
                 onClick={() => setBudget('budget')}
               >
-                Budget
+                {budget === 'budget' && (
+                  <motion.div 
+                    className="absolute inset-0 bg-mountain-light/20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+                  />
+                )}
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <Palmtree className="h-5 w-5 mb-1" />
+                  <span>Budget</span>
+                  {budget === 'budget' && (
+                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
+                  )}
+                </div>
               </Button>
               <Button
                 variant={budget === 'economic' ? 'default' : 'outline'}
-                className={`py-6 ${budget === 'economic' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                className={`py-6 relative overflow-hidden transition-all duration-300 ${
+                  budget === 'economic' 
+                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
+                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
+                }`}
                 onClick={() => setBudget('economic')}
               >
-                Economic
+                {budget === 'economic' && (
+                  <motion.div 
+                    className="absolute inset-0 bg-mountain-light/20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+                  />
+                )}
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <Mountain className="h-5 w-5 mb-1" />
+                  <span>Economic</span>
+                  {budget === 'economic' && (
+                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
+                  )}
+                </div>
               </Button>
               <Button
                 variant={budget === 'luxury' ? 'default' : 'outline'}
-                className={`py-6 ${budget === 'luxury' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-white/10 hover:bg-white/20 text-white'}`}
+                className={`py-6 relative overflow-hidden transition-all duration-300 ${
+                  budget === 'luxury' 
+                    ? 'bg-mountain hover:bg-mountain-dark neon-glow' 
+                    : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
+                }`}
                 onClick={() => setBudget('luxury')}
               >
-                Luxury
+                {budget === 'luxury' && (
+                  <motion.div 
+                    className="absolute inset-0 bg-mountain-light/20"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.5, 0] }}
+                    transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
+                  />
+                )}
+                <div className="flex flex-col items-center justify-center gap-1">
+                  <Sparkles className="h-5 w-5 mb-1" />
+                  <span>Luxury</span>
+                  {budget === 'luxury' && (
+                    <CheckCircle2 className="h-5 w-5 text-white mt-1" />
+                  )}
+                </div>
               </Button>
             </div>
-          </div>
+          </motion.div>
         );
       default:
         return null;
@@ -105,7 +212,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-4 md:py-8">
         <div className="flex flex-col items-center lg:items-start min-h-[calc(90vh-80px)] justify-center">
           <div className={`inline-block px-6 py-2 mb-4 rounded-full neo-blur border border-mountain/30 text-white font-medium transform transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Discover the Himalayan Wonder
+            <motion.div 
+              className="flex items-center gap-2"
+              animate={{ scale: [1, 1.03, 1] }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+            >
+              <MountainSnow className="h-4 w-4 text-mountain-light" />
+              Discover the Himalayan Wonder
+            </motion.div>
           </div>
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white text-center lg:text-left transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             SPITI VALLEY TOUR PACKAGES
@@ -115,20 +229,40 @@ const HeroSection = () => {
           </p>
           
           {/* Travel Quiz Card */}
-          <Card className={`w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/60 border border-white/10 overflow-hidden rounded-xl text-white transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <CardContent className="p-6">
+          <Card className={`w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-white/10 overflow-hidden rounded-xl text-white transition-all duration-700 delay-300 shadow-xl hover:shadow-mountain/20 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <CardContent className="p-6 relative">
+              {/* Decorative elements */}
+              <motion.div 
+                className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 0.3, scale: 1 }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+              >
+                <Mountain className="w-full h-full text-mountain-light" />
+              </motion.div>
+              
               {renderQuizContent()}
               
-              <div className="mt-6 flex justify-center">
+              <motion.div 
+                className="mt-6 flex justify-center"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button 
                   onClick={handleNextStep}
                   disabled={(currentStep === 1 && !visitedBefore) || (currentStep === 2 && !budget)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-8 rounded-full flex items-center"
+                  className="bg-mountain hover:bg-mountain-dark text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300"
                 >
-                  <span>Next Step</span>
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  <motion.span 
+                    className="absolute inset-0 bg-gradient-to-r from-mountain-light/20 to-transparent" 
+                    initial={{ x: '-100%' }}
+                    animate={{ x: '100%' }}
+                    transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+                  />
+                  <span className="relative z-10">Next Step</span>
+                  <ChevronRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </div>
+              </motion.div>
             </CardContent>
           </Card>
         </div>
@@ -136,7 +270,7 @@ const HeroSection = () => {
       
       {/* Tour Request Dialog */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="neo-blur backdrop-blur-xl bg-black/80 border-0 overflow-hidden rounded-2xl text-white max-w-md">
+        <DialogContent className="neo-blur backdrop-blur-xl bg-black/90 border-0 overflow-hidden rounded-2xl text-white max-w-md">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-mountain via-mountain-light to-mountain"></div>
           <DialogTitle className="text-2xl font-bold text-center text-white">Get Free Tour Plan</DialogTitle>
           <DialogDescription className="text-white/80 text-center">
@@ -200,9 +334,21 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <Button className="w-full neon-glow bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 py-5 text-lg">
-              Submit Request
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Button className="w-full neon-glow bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 py-5 text-lg relative overflow-hidden">
+                <motion.span 
+                  className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0" 
+                  initial={{ x: '-100%' }}
+                  animate={{ x: '100%' }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
+                />
+                <Heart className="h-5 w-5 mr-2" />
+                <span className="relative z-10">Submit Request</span>
+              </Button>
+            </motion.div>
           </form>
         </DialogContent>
       </Dialog>
