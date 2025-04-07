@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -108,8 +107,7 @@ const BackgroundSlideshow = ({
             className="h-full w-full object-cover"
             loading="eager"
             style={{ 
-              willChange: "transform",
-              imageRendering: "high-quality"
+              willChange: "transform"
             }}
           />
           
