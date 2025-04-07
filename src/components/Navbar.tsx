@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -26,10 +27,10 @@ export const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-mountain/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 bg-transparent">
         <div className="flex items-center justify-between h-16">
-          <div className="font-bold text-2xl bg-gradient-to-r from-sky to-mountain-light bg-clip-text text-transparent animate-fade-in">
+          <div className="font-bold text-2xl bg-gradient-to-r from-yellow-400 to-yellow-200 bg-clip-text text-transparent animate-fade-in">
             SpitiBeyond
           </div>
           <nav className="hidden md:flex items-center space-x-6">
@@ -37,16 +38,16 @@ export const Navbar = () => {
             animationDelay: `${index * 0.1}s`
           }}>
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-forest to-forest-light transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-500 to-yellow-300 transition-all duration-300 group-hover:w-full"></span>
               </a>)}
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 animate-fade-in" style={{
+            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white border-0 shadow-lg shadow-yellow-600/30 transition-all duration-300 hover:shadow-yellow-600/50 animate-fade-in" style={{
             animationDelay: '0.6s'
           }} onClick={() => setIsFormOpen(true)}>
               Book Now
             </Button>
-            <Button variant="outline" className="md:hidden border border-mountain-light/30 text-offwhite hover:bg-mountain/20 animate-fade-in" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{
+            <Button variant="outline" className="md:hidden border border-yellow-500/30 text-offwhite hover:bg-yellow-500/20 animate-fade-in" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{
             animationDelay: '0.7s'
           }}>
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -56,10 +57,10 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown with animation */}
-      <div className={`md:hidden bg-gradient-to-b from-mountain/95 to-mountain-dark/95 backdrop-blur-lg border-b border-mountain-light/30 absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`md:hidden bg-gradient-to-b from-black/95 to-black/95 backdrop-blur-lg border-b border-yellow-500/30 absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex flex-col space-y-4">
-            {["Home", "Tour Packages", "Destinations", "Gallery", "About Us", "Contact"].map((item, index) => <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`text-sm font-medium text-offwhite hover:text-white transition-colors py-2 border-b border-mountain-light/50 transform translate-y-4 opacity-0 ${mobileMenuOpen ? 'animate-slide-up' : ''}`} style={{
+            {["Home", "Tour Packages", "Destinations", "Gallery", "About Us", "Contact"].map((item, index) => <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`text-sm font-medium text-offwhite hover:text-white transition-colors py-2 border-b border-yellow-500/20 transform translate-y-4 opacity-0 ${mobileMenuOpen ? 'animate-slide-up' : ''}`} style={{
             animationDelay: `${index * 0.1}s`
           }} onClick={() => setMobileMenuOpen(false)}>
                 {item}
@@ -71,7 +72,7 @@ export const Navbar = () => {
       {/* Tour Request Dialog */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
         <DialogContent className="neo-blur backdrop-blur-xl bg-black/60 border-0 overflow-hidden rounded-2xl text-white max-w-md">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-mountain via-mountain-light to-mountain"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500"></div>
           <DialogTitle className="text-2xl font-bold text-center text-white">Get Free Tour Plan</DialogTitle>
           <DialogDescription className="text-white/80 text-center">
             Fill out this form and we'll get back to you with a customized tour plan.
@@ -80,8 +81,8 @@ export const Navbar = () => {
           <form className="space-y-4 mt-2">
             <div className="space-y-2">
               <div className="relative">
-                <Input id="fullName" placeholder="Your full name" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
-                <div className="absolute left-3 top-2.5 text-mountain">
+                <Input id="fullName" placeholder="Your full name" className="pl-10 neo-blur bg-transparent border-yellow-500/30 focus:border-yellow-400 focus:ring-yellow-400/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-yellow-400">
                   <Users className="h-5 w-5" />
                 </div>
               </div>
@@ -89,8 +90,8 @@ export const Navbar = () => {
 
             <div className="space-y-2">
               <div className="relative">
-                <Input id="email" type="email" placeholder="Your email address" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
-                <div className="absolute left-3 top-2.5 text-mountain">
+                <Input id="email" type="email" placeholder="Your email address" className="pl-10 neo-blur bg-transparent border-yellow-500/30 focus:border-yellow-400 focus:ring-yellow-400/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-yellow-400">
                   <Mail className="h-5 w-5" />
                 </div>
               </div>
@@ -98,8 +99,8 @@ export const Navbar = () => {
 
             <div className="space-y-2">
               <div className="relative">
-                <Input id="phone" type="tel" placeholder="Your phone number" className="pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
-                <div className="absolute left-3 top-2.5 text-mountain">
+                <Input id="phone" type="tel" placeholder="Your phone number" className="pl-10 neo-blur bg-transparent border-yellow-500/30 focus:border-yellow-400 focus:ring-yellow-400/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-yellow-400">
                   <Phone className="h-5 w-5" />
                 </div>
               </div>
@@ -110,7 +111,7 @@ export const Navbar = () => {
                 Choose a Package
               </Label>
               <Select>
-                <SelectTrigger className="neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white">
+                <SelectTrigger className="neo-blur bg-transparent border-yellow-500/30 focus:border-yellow-400 focus:ring-yellow-400/20 transition-all text-white">
                   <SelectValue placeholder="Select a tour package" />
                 </SelectTrigger>
                 <SelectContent className="neo-blur bg-black/80 backdrop-blur-xl border-white/20 text-white">
@@ -125,14 +126,14 @@ export const Navbar = () => {
                 Your Message
               </Label>
               <div className="relative">
-                <Textarea id="message" placeholder="Tell us about your requirements" className="min-h-[80px] pl-10 neo-blur bg-transparent border-white/30 focus:border-mountain focus:ring-mountain/20 transition-all text-white placeholder:text-white/50" />
-                <div className="absolute left-3 top-2.5 text-mountain">
+                <Textarea id="message" placeholder="Tell us about your requirements" className="min-h-[80px] pl-10 neo-blur bg-transparent border-yellow-500/30 focus:border-yellow-400 focus:ring-yellow-400/20 transition-all text-white placeholder:text-white/50" />
+                <div className="absolute left-3 top-2.5 text-yellow-400">
                   <MapPin className="h-5 w-5" />
                 </div>
               </div>
             </div>
 
-            <Button className="w-full neon-glow bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-lg shadow-forest-dark/30 transition-all duration-300 hover:shadow-forest-dark/50 py-5 text-lg">
+            <Button className="w-full neon-glow bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white border-0 shadow-lg shadow-yellow-600/30 transition-all duration-300 hover:shadow-yellow-600/50 py-5 text-lg">
               Submit Request
             </Button>
           </form>

@@ -1,3 +1,4 @@
+
 import { useRef } from 'react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,11 +26,11 @@ const GallerySection = () => {
         <div className="flex justify-between items-center mb-10">
           <h2 className="text-3xl font-bold text-yellow-500">Featured Photos</h2>
           <div className="flex gap-3">
-            <Button onClick={handlePrevClick} variant="outline" size="icon" className="neon-border rounded-full border-2 border-skyblue/30 text-skyblue hover:bg-skyblue/10 transition-all">
+            <Button onClick={handlePrevClick} variant="outline" size="icon" className="neon-border rounded-full border-2 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 transition-all">
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Previous</span>
             </Button>
-            <Button onClick={handleNextClick} variant="outline" size="icon" className="neon-border rounded-full border-2 border-skyblue/30 text-skyblue hover:bg-skyblue/10 transition-all">
+            <Button onClick={handleNextClick} variant="outline" size="icon" className="neon-border rounded-full border-2 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10 transition-all">
               <ChevronRight className="h-5 w-5" />
               <span className="sr-only">Next</span>
             </Button>
