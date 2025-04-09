@@ -1,5 +1,12 @@
 
 import { TestimonialCard } from '@/components/TestimonialCard';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
 
 const TestimonialsSection = () => {
   return (
@@ -12,29 +19,48 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <TestimonialCard
-            name="Rahul Sharma"
-            location="Delhi"
-            quote="The Spiti Valley tour was beyond my expectations. The landscapes were breathtaking and our guide was extremely knowledgeable."
-            rating={5}
-            index={0}
-          />
-          <TestimonialCard
-            name="Priya Patel"
-            location="Mumbai"
-            quote="A life-changing experience! The team took care of everything, allowing us to fully immerse in the beauty of Spiti Valley."
-            rating={5}
-            index={1}
-          />
-          <TestimonialCard
-            name="Amit Singh"
-            location="Bangalore"
-            quote="The attention to detail in our itinerary was impressive. We got to experience both popular spots and hidden gems."
-            rating={4}
-            index={2}
-          />
-        </div>
+        <Carousel className="w-full">
+          <CarouselContent>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard
+                name="Rahul Sharma"
+                location="Delhi"
+                quote="The Spiti Valley tour was beyond my expectations. The landscapes were breathtaking and our guide was extremely knowledgeable."
+                rating={5}
+                index={0}
+              />
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard
+                name="Priya Patel"
+                location="Mumbai"
+                quote="A life-changing experience! The team took care of everything, allowing us to fully immerse in the beauty of Spiti Valley."
+                rating={5}
+                index={1}
+              />
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard
+                name="Amit Singh"
+                location="Bangalore"
+                quote="The attention to detail in our itinerary was impressive. We got to experience both popular spots and hidden gems."
+                rating={4}
+                index={2}
+              />
+            </CarouselItem>
+            <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+              <TestimonialCard
+                name="Sneha Gupta"
+                location="Kolkata"
+                quote="Excellent service from start to finish! The views were incredible and the accommodations were perfect for the location."
+                rating={5}
+                index={3}
+              />
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious className="left-4" />
+          <CarouselNext className="right-4" />
+        </Carousel>
       </div>
     </section>
   );

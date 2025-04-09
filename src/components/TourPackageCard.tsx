@@ -38,7 +38,7 @@ export const TourPackageCard = ({
         </div>
         
         <div className="p-6">
-          <h3 className="font-bold text-lg text-foreground mb-2">{title}</h3>
+          <h3 className="font-bold text-lg text-yellow-500 mb-2">{title}</h3>
           
           <div className="flex items-center mb-4">
             <Clock className="h-5 w-5 text-yellow-400 mr-2" />

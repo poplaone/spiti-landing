@@ -14,27 +14,21 @@ const StickyFooter = () => {
         <MessageCircle className="h-6 w-6" />
       </a>
       
-      {/* Fixed Footer */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 py-3 px-4 bg-black/80 backdrop-blur-md border-t border-white/10">
-        <div className="container mx-auto flex items-center justify-between gap-3 max-w-lg">
-          <img 
-            src="/lovable-uploads/b9da6f75-6fe0-4f04-93e2-967354f3c6f4.png" 
-            alt="Spiti Valley Travels" 
-            className="h-10 absolute left-2 bottom-full mb-1"
-          />
-          
+      {/* Fixed Footer - Only visible on mobile and tablet */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 py-3 px-4 bg-black/80 backdrop-blur-md border-t border-white/10">
+        <div className="flex items-center justify-between gap-3 max-w-lg mx-auto">
           <Button 
-            className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white gap-2"
+            className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white gap-2 px-2"
           >
-            <Send className="h-4 w-4" />
-            Send Enquiry
+            <Send className="h-4 w-4 shrink-0" />
+            <span className="whitespace-nowrap">Send Enquiry</span>
           </Button>
           
           <Button 
-            className="flex-1 bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white gap-2"
+            className="flex-1 bg-gradient-to-r from-blue-900 to-blue-700 hover:from-blue-800 hover:to-blue-600 text-white gap-2 px-2"
           >
-            <Phone className="h-4 w-4" />
-            Call Now
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="whitespace-nowrap">Call Now</span>
           </Button>
         </div>
       </div>

@@ -1,10 +1,19 @@
+
 import { MapPin, Mail, Phone } from "lucide-react";
+
 const FooterSection = () => {
-  return <footer id="contact" className="neo-blur py-12">
+  return (
+    <footer id="contact" className="neo-blur py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-yellow-400">SpitiBeyond</h3>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/b9da6f75-6fe0-4f04-93e2-967354f3c6f4.png" 
+                alt="SpitiBeyond Logo" 
+                className="h-14" 
+              />
+            </div>
             <p className="text-white/80 mb-4">
               Your trusted partner for exploring the magical landscapes of Spiti Valley with authentic experiences and
               personalized service.
@@ -30,6 +39,8 @@ const FooterSection = () => {
               </a>
             </div>
           </div>
+          
+          {/* Quick links section */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-yellow-500">Quick Links</h3>
             <ul className="space-y-2">
@@ -65,6 +76,8 @@ const FooterSection = () => {
               </li>
             </ul>
           </div>
+          
+          {/* Popular destinations section */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-yellow-500">Popular Destinations</h3>
             <ul className="space-y-2">
@@ -100,6 +113,8 @@ const FooterSection = () => {
               </li>
             </ul>
           </div>
+          
+          {/* Contact section */}
           <div>
             <h3 className="text-xl font-semibold mb-4 text-yellow-500">Contact Us</h3>
             <ul className="space-y-4">
@@ -122,6 +137,8 @@ const FooterSection = () => {
           <p className="text-yellow-400">© {new Date().getFullYear()} SpitiBeyond. All rights reserved.</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default FooterSection;
