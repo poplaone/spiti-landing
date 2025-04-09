@@ -32,12 +32,14 @@ export const TourPackageCard = ({
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-            <h3 className="font-bold text-lg text-white">{title}</h3>
+          <div className="absolute bottom-4 right-4 flex justify-end">
             <p className="font-bold text-white">{price}</p>
           </div>
         </div>
+        
         <div className="p-6">
+          <h3 className="font-bold text-lg text-foreground mb-2">{title}</h3>
+          
           <div className="flex items-center mb-4">
             <Clock className="h-5 w-5 text-yellow-400 mr-2" />
             <p className="text-sm text-foreground">{duration}</p>

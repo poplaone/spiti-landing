@@ -7,6 +7,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import CallToActionSection from '@/components/sections/CallToActionSection';
 import FooterSection from '@/components/sections/FooterSection';
 import TourPackagesCarousel from '@/components/TourPackagesCarousel';
+import StickyFooter from '@/components/StickyFooter';
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 
 const Index = () => {
@@ -22,7 +23,7 @@ const Index = () => {
       <BackgroundSlideshow images={bgImages} />
       <Navbar />
       
-      <div className="flex-grow flex flex-col space-y-0">
+      <div className="flex-grow flex flex-col space-y-0 pb-16">
         <HeroSection />
         
         {/* Tour Package Sections with minimal spacing */}
@@ -35,6 +36,9 @@ const Index = () => {
         <CallToActionSection />
         <FooterSection />
       </div>
+      
+      {/* Sticky Footer with buttons */}
+      <StickyFooter />
     </main>
   );
 };
