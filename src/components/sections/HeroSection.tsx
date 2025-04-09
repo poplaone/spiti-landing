@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight, CheckCircle2, Compass, MountainSnow, Plane, Sparkles, Heart, PlaneTakeoff, Mountain, Footprints, Palmtree, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -173,9 +172,7 @@ const HeroSection = () => {
           <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white text-center lg:text-left transition-all duration-700 delay-100 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             SPITI VALLEY TOUR PACKAGES
           </h1>
-          <p className={`text-lg md:text-xl text-offwhite mb-6 max-w-3xl text-center lg:text-left transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            Customized Tours from Trusted Local Agents At Lowest Prices
-          </p>
+          
           
           {/* Travel Quiz Card */}
           <Card className={`w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-yellow-500/10 overflow-hidden rounded-xl text-white transition-all duration-700 delay-300 shadow-xl hover:shadow-yellow-700/20 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
