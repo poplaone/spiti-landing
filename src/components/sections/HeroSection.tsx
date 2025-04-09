@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight, CheckCircle2, Compass, MountainSnow, Plane, Sparkles, Heart, PlaneTakeoff, Mountain, Footprints, Palmtree, Zap } from "lucide-react";
+import { Calendar, Users, Clock, MapPin, Mail, Phone, ChevronRight, CheckCircle2, Compass, MountainSnow, Plane, Sparkles, Heart, PlaneTakeoff, Mountain, Footprints, Palmtree, Zap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
 import { motion } from "framer-motion";
+
 const HeroSection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -17,16 +18,15 @@ const HeroSection = () => {
   const [visitedBefore, setVisitedBefore] = useState<string | null>(null);
   const [budget, setBudget] = useState<string | null>(null);
 
-  // Combine all packages for the dropdown
   const allPackages = [...bestSellingPackages, ...adventurePackages, ...winterPackages];
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
   const handleNextStep = () => {
     if (currentStep === 2 && budget) {
-      // When all questions are answered, open the form
       setIsFormOpen(true);
-      // Reset quiz for next time
       setCurrentStep(1);
       setVisitedBefore(null);
       setBudget(null);
@@ -34,6 +34,7 @@ const HeroSection = () => {
       setCurrentStep(2);
     }
   };
+
   const renderQuizContent = () => {
     switch (currentStep) {
       case 1:
@@ -154,6 +155,14 @@ const HeroSection = () => {
         return null;
     }
   };
+
+  const scrollToTourPackages = () => {
+    const tourPackagesSection = document.getElementById('best-selling-spiti-tour-packages');
+    if (tourPackagesSection) {
+      tourPackagesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <section id="home" className="relative min-h-[90vh] pt-16">
       <div className="container mx-auto px-4 py-4 md:py-8">
         <div className="flex flex-col items-center lg:items-start min-h-[calc(90vh-80px)] justify-center">
@@ -173,11 +182,16 @@ const HeroSection = () => {
             SPITI VALLEY TOUR PACKAGES
           </h1>
           
+          <div 
+            onClick={scrollToTourPackages}
+            className={`flex items-center gap-2 text-white/90 hover:text-white text-lg mb-6 cursor-pointer group transition-all duration-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <span>Explore our amazing tour packages</span>
+            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform text-yellow-400" />
+          </div>
           
-          {/* Travel Quiz Card */}
           <Card className={`w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-yellow-500/10 overflow-hidden rounded-xl text-white transition-all duration-700 delay-300 shadow-xl hover:shadow-yellow-700/20 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <CardContent className="p-6 relative">
-              {/* Decorative elements */}
               <motion.div className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none" initial={{
               opacity: 0,
               scale: 0.8
@@ -218,7 +232,6 @@ const HeroSection = () => {
         </div>
       </div>
       
-      {/* Tour Request Dialog */}
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
         <DialogContent className="neo-blur backdrop-blur-xl bg-black/90 border-0 overflow-hidden rounded-2xl text-white max-w-md">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500"></div>
@@ -306,4 +319,5 @@ const HeroSection = () => {
       </Dialog>
     </section>;
 };
+
 export default HeroSection;

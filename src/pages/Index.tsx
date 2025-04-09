@@ -27,7 +27,9 @@ const Index = () => {
         <HeroSection />
         
         {/* Tour Package Sections with minimal spacing */}
-        <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
+        <div id="best-selling-spiti-tour-packages">
+          <TourPackagesCarousel title="Best Selling Spiti Tour Packages" packages={bestSellingPackages} />
+        </div>
         <TourPackagesCarousel title="Spiti Adventure Tour Packages" packages={adventurePackages} />
         <TourPackagesCarousel title="Spiti Winter Wonderland" packages={winterPackages} />
         
