@@ -1,4 +1,3 @@
-
 import { MapPin, Mail, Phone } from "lucide-react";
 
 const FooterSection = () => {
@@ -134,7 +133,10 @@ const FooterSection = () => {
           </div>
         </div>
         <div className="border-t border-white/30 mt-10 pt-6 text-center text-white/60">
-          <p className="text-yellow-400">© {new Date().getFullYear()} SpitiBeyond. All rights reserved.</p>
+          <Button className="bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0">
+            Send Inquiry
+          </Button>
+          <p className="text-yellow-400 mt-4">© {new Date().getFullYear()} SpitiBeyond. All rights reserved.</p>
         </div>
       </div>
     </footer>

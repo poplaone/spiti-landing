@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -8,13 +8,14 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Users, Mail, Phone, MapPin } from "lucide-react";
 import { bestSellingPackages, adventurePackages, winterPackages } from '@/data/tourPackages';
+
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
 
-  // Combine all packages for the dropdown
   const allPackages = [...bestSellingPackages, ...adventurePackages, ...winterPackages];
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -26,7 +27,9 @@ export const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 bg-transparent">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -41,9 +44,11 @@ export const Navbar = () => {
               </a>)}
           </nav>
           <div className="flex items-center space-x-4">
-            <Button className="bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white border-0 shadow-lg shadow-yellow-600/30 transition-all duration-300 hover:shadow-yellow-600/50 animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }} onClick={() => setIsFormOpen(true)}>
+            <Button 
+              className="bg-gradient-to-r from-skyblue via-skyblue-dark to-skyblue-light hover:from-skyblue-dark hover:to-skyblue text-white border-0 shadow-lg shadow-skyblue-dark/30 transition-all duration-300 hover:shadow-skyblue-dark/50 animate-fade-in" 
+              style={{ animationDelay: '0.6s' }} 
+              onClick={() => setIsFormOpen(true)}
+            >
               Book Now
             </Button>
             <Button variant="outline" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{
@@ -55,7 +60,6 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown with animation */}
       <div className={`md:hidden bg-gradient-to-b from-black/95 to-black/95 backdrop-blur-lg border-b border-yellow-500/30 absolute w-full transition-all duration-300 ease-in-out overflow-hidden ${mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="container mx-auto px-4 py-4">
           <nav className="flex flex-col space-y-4">
@@ -67,8 +71,7 @@ export const Navbar = () => {
           </nav>
         </div>
       </div>
-      
-      {/* Tour Request Dialog */}
+
       <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
         <DialogContent className="neo-blur backdrop-blur-xl bg-black/60 border-0 overflow-hidden rounded-2xl text-white max-w-md">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500"></div>
@@ -138,6 +141,8 @@ export const Navbar = () => {
           </form>
         </DialogContent>
       </Dialog>
-    </header>;
+    </header>
+  );
 };
+
 export default Navbar;
