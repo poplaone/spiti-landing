@@ -1,11 +1,14 @@
+
 import { TestimonialCard } from '@/components/TestimonialCard';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+
 const TestimonialsSection = () => {
-  return <section id="about-us" className="py-16 relative">
+  return (
+    <section id="about-us" className="py-16 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white inline-block mb-4">What Our Travelers Say</h2>
-          
+          <div className="h-1 w-20 bg-gradient-to-r from-skyblue-dark to-skyblue-light mx-auto"></div>
         </div>
 
         <Carousel className="w-full">
@@ -23,10 +26,12 @@ const TestimonialsSection = () => {
               <TestimonialCard name="Sneha Gupta" location="Kolkata" quote="Excellent service from start to finish! The views were incredible and the accommodations were perfect for the location." rating={5} index={3} />
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious className="left-4" />
-          <CarouselNext className="right-4" />
+          <CarouselPrevious className="bg-skyblue-dark/80 text-white hover:bg-skyblue-dark border-skyblue-light/30" />
+          <CarouselNext className="bg-skyblue-dark/80 text-white hover:bg-skyblue-dark border-skyblue-light/30" />
         </Carousel>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default TestimonialsSection;

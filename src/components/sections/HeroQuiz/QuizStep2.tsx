@@ -18,7 +18,7 @@ const QuizStep2 = ({ budget, setBudget }: QuizStep2Props) => {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-        <Zap className="h-5 w-5 text-forest-light animate-pulse" />
+        <Zap className="h-5 w-5 text-skyblue-light animate-pulse" />
         <span>2. What's your budget?</span>
       </h3>
       <div className="grid grid-cols-3 gap-4">
@@ -26,19 +26,11 @@ const QuizStep2 = ({ budget, setBudget }: QuizStep2Props) => {
           variant={budget === 'budget' ? 'default' : 'outline'} 
           className={`py-6 relative overflow-hidden transition-all duration-300 ${
             budget === 'budget' 
-              ? 'bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light neon-glow' 
+              ? 'bg-gradient-to-r from-skyblue-dark to-skyblue-light hover:from-skyblue hover:to-skyblue-light text-white' 
               : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
           }`} 
           onClick={() => setBudget('budget')}
         >
-          {budget === 'budget' && (
-            <motion.div 
-              className="absolute inset-0 bg-white/20" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: [0, 0.5, 0] }} 
-              transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-            />
-          )}
           <div className="flex flex-col items-center justify-center gap-1">
             <span>Budget</span>
             {budget === 'budget' && <CheckCircle2 className="h-5 w-5 text-white mt-1 flex-shrink-0" />}
@@ -48,19 +40,11 @@ const QuizStep2 = ({ budget, setBudget }: QuizStep2Props) => {
           variant={budget === 'economic' ? 'default' : 'outline'} 
           className={`py-6 relative overflow-hidden transition-all duration-300 ${
             budget === 'economic' 
-              ? 'bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light neon-glow' 
+              ? 'bg-gradient-to-r from-skyblue-dark to-skyblue-light hover:from-skyblue hover:to-skyblue-light text-white' 
               : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
           }`} 
           onClick={() => setBudget('economic')}
         >
-          {budget === 'economic' && (
-            <motion.div 
-              className="absolute inset-0 bg-white/20" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: [0, 0.5, 0] }} 
-              transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-            />
-          )}
           <div className="flex flex-col items-center justify-center gap-1">
             <span>Economic</span>
             {budget === 'economic' && <CheckCircle2 className="h-5 w-5 text-white mt-1 flex-shrink-0" />}
@@ -70,19 +54,11 @@ const QuizStep2 = ({ budget, setBudget }: QuizStep2Props) => {
           variant={budget === 'luxury' ? 'default' : 'outline'} 
           className={`py-6 relative overflow-hidden transition-all duration-300 ${
             budget === 'luxury' 
-              ? 'bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light neon-glow' 
+              ? 'bg-gradient-to-r from-skyblue-dark to-skyblue-light hover:from-skyblue hover:to-skyblue-light text-white' 
               : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
           }`} 
           onClick={() => setBudget('luxury')}
         >
-          {budget === 'luxury' && (
-            <motion.div 
-              className="absolute inset-0 bg-white/20" 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: [0, 0.5, 0] }} 
-              transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}
-            />
-          )}
           <div className="flex flex-col items-center justify-center gap-1">
             <span>Luxury</span>
             {budget === 'luxury' && <CheckCircle2 className="h-5 w-5 text-white mt-1 flex-shrink-0" />}

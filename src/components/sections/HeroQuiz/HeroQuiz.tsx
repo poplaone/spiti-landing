@@ -39,7 +39,7 @@ const HeroQuiz = () => {
 
   return (
     <>
-      <Card className="w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-forest-light/10 overflow-hidden rounded-xl text-white shadow-xl hover:shadow-forest-dark/20">
+      <Card className="w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-skyblue/10 overflow-hidden rounded-xl text-white shadow-xl hover:shadow-skyblue-dark/20">
         <CardContent className="p-6 relative">
           <motion.div 
             className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none" 
@@ -47,7 +47,7 @@ const HeroQuiz = () => {
             animate={{ opacity: 0.3, scale: 1 }} 
             transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
           >
-            <Mountain className="w-full h-full text-forest-light" />
+            <Mountain className="w-full h-full text-skyblue-light" />
           </motion.div>
           
           {renderQuizContent()}
@@ -60,16 +60,10 @@ const HeroQuiz = () => {
             <Button 
               onClick={handleNextStep} 
               disabled={currentStep === 1 && !visitedBefore || currentStep === 2 && !budget} 
-              className="text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300 bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light"
+              className="text-white py-2 px-8 rounded-full flex items-center group transition-all duration-300 bg-gradient-to-r from-skyblue-dark to-skyblue-light hover:from-skyblue hover:to-skyblue-light shadow-none hover:shadow-none"
             >
-              <motion.span 
-                className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" 
-                initial={{ x: '-100%' }} 
-                animate={{ x: '100%' }} 
-                transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
-              />
-              <span className="relative z-10">Next Step</span>
-              <ChevronRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+              <span>Next Step</span>
+              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
         </CardContent>
