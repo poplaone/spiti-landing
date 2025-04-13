@@ -8,9 +8,7 @@ const CallToActionSection = () => {
             Book your Spiti Valley adventure today and create memories that will last a lifetime.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="neon-glow bg-terracotta text-white hover:bg-terracotta-dark border-0 shadow-lg shadow-terracotta-dark/20 transition-all duration-300 hover:shadow-terracotta-dark/30 px-8 py-6 text-lg hover:-translate-y-1">
-              Book Now
-            </Button>
+            
             <Button variant="outline" className="neon-border border-2 border-white text-white px-8 py-6 text-lg hover:-translate-y-1 bg-transparent">
               Contact Us
             </Button>
