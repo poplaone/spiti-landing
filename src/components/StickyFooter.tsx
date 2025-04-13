@@ -18,14 +18,14 @@ const StickyFooter = () => {
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 py-3 px-4 bg-black/80 backdrop-blur-md border-t border-white/10">
         <div className="flex items-center justify-between gap-3 max-w-lg mx-auto">
           <Button 
-            className="flex-1 bg-gradient-to-r from-terracotta to-forest-light hover:from-forest hover:to-forest-dark text-white gap-2 px-2"
+            className="flex-1 bg-gradient-to-r from-forest to-forest-light hover:from-forest hover:to-forest-dark text-white gap-2 px-2"
           >
             <Send className="h-4 w-4 shrink-0" />
             <span className="whitespace-nowrap">Send Enquiry</span>
           </Button>
           
           <Button 
-            className="flex-1 bg-gradient-to-r from-skyblue via-skyblue-dark to-skyblue-light hover:from-skyblue-dark hover:to-skyblue text-white gap-2 px-2"
+            className="flex-1 bg-gradient-to-r from-skyblue via-skyblue to-skyblue-light hover:from-skyblue hover:to-skyblue-light text-white gap-2 px-2"
           >
             <Phone className="h-4 w-4 shrink-0" />
             <span className="whitespace-nowrap">Call Now</span>

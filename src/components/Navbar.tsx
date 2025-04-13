@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -44,17 +45,21 @@ export const Navbar = () => {
               </a>)}
           </nav>
           <div className="flex items-center space-x-4">
+            {/* Swapped positions - dropdown menu button first, then Book Now button */}
             <Button 
-              className="bg-gradient-to-r from-skyblue via-skyblue-dark to-skyblue-light hover:from-skyblue-dark hover:to-skyblue text-white border-0 shadow-lg shadow-skyblue-dark/30 transition-all duration-300 hover:shadow-skyblue-dark/50 animate-fade-in" 
+              variant="outline" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+              style={{animationDelay: '0.7s'}} 
+              className="md:hidden border border-white/30 text-offwhite animate-fade-in bg-transparent hover:bg-white/10"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+            <Button 
+              className="bg-gradient-to-r from-skyblue via-skyblue to-skyblue-light hover:from-skyblue hover:to-skyblue-light text-white border-0 shadow-lg shadow-skyblue/30 transition-all duration-300 hover:shadow-skyblue/50 animate-fade-in" 
               style={{ animationDelay: '0.6s' }} 
               onClick={() => setIsFormOpen(true)}
             >
               Book Now
-            </Button>
-            <Button variant="outline" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} style={{
-            animationDelay: '0.7s'
-          }} className="md:hidden border border-yellow-500/30 text-offwhite animate-fade-in bg-transparent">
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
