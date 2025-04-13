@@ -68,9 +68,9 @@ export const EnhancedTourCard = ({
           {/* Only show duration on image */}
           <div className="absolute bottom-0 left-0 right-0 p-3">
             <div className="flex items-center mt-2">
-              <Calendar className="h-4 w-4 text-yellow-400 mr-2" />
+              <Calendar className="h-4 w-4 text-forest-light mr-2" />
               <span className="text-white/90 text-sm font-medium">
-                <span className="text-yellow-400">{duration.nights} Nights</span> {duration.days} Days
+                <span className="text-forest-light">{duration.nights} Nights</span> {duration.days} Days
               </span>
             </div>
           </div>
@@ -86,26 +86,26 @@ export const EnhancedTourCard = ({
           {/* Amenities Icons */}
           <div className="flex justify-between mb-4 px-2">
             <div className="flex flex-col items-center">
-              <Bed className="h-5 w-5 text-yellow-400 mb-1" />
+              <Bed className="h-5 w-5 text-forest-light mb-1" />
               <span className="text-xs text-white/80">Hotels</span>
             </div>
             <div className="flex flex-col items-center">
-              <Binoculars className="h-5 w-5 text-yellow-400 mb-1" />
+              <Binoculars className="h-5 w-5 text-forest-light mb-1" />
               <span className="text-xs text-white/80">Sightseeing</span>
             </div>
             <div className="flex flex-col items-center">
-              <Utensils className="h-5 w-5 text-yellow-400 mb-1" />
+              <Utensils className="h-5 w-5 text-forest-light mb-1" />
               <span className="text-xs text-white/80">Meals</span>
             </div>
             <div className="flex flex-col items-center">
-              <Car className="h-5 w-5 text-yellow-400 mb-1" />
+              <Car className="h-5 w-5 text-forest-light mb-1" />
               <span className="text-xs text-white/80">Transfers</span>
             </div>
           </div>
 
           {/* Fixed Departure Section */}
           <div className="mt-4">
-            <div className="text-white text-center py-2 font-semibold rounded-t-lg bg-gradient-to-r from-yellow-500 to-yellow-300">
+            <div className="text-white text-center py-2 font-semibold rounded-t-lg bg-gradient-to-r from-forest to-forest-light">
               Fix Departure Batches
             </div>
             
@@ -113,7 +113,7 @@ export const EnhancedTourCard = ({
               {priceOptions.map((option, idx) => (
                 <div key={idx} className="bg-black/90 p-3 text-center">
                   <div className="text-white font-bold">{option.price}</div>
-                  <div className="text-xs text-yellow-400">{option.label}</div>
+                  <div className="text-xs text-forest-light">{option.label}</div>
                 </div>
               ))}
             </div>
@@ -122,7 +122,7 @@ export const EnhancedTourCard = ({
           {/* Private Tour Options */}
           {privateOptions && (
             <div className="mt-px">
-              <div className="text-white text-center py-2 font-semibold bg-gradient-to-r from-yellow-500 to-yellow-300">
+              <div className="text-white text-center py-2 font-semibold bg-gradient-to-r from-forest to-forest-light">
                 For Private Tour
               </div>
               
@@ -134,7 +134,7 @@ export const EnhancedTourCard = ({
                 <div className="grid grid-cols-5 gap-px bg-white/20">
                   {privateOptions.passengerOptions.map((option, idx) => (
                     <div key={idx} className="bg-black/90 p-2 text-center">
-                      <div className="text-xs text-yellow-400">{option}</div>
+                      <div className="text-xs text-forest-light">{option}</div>
                       {privateOptions.prices && (
                         <div className="text-xs text-white font-bold mt-1 bg-transparent">
                           {privateOptions.prices[idx]}
@@ -149,7 +149,7 @@ export const EnhancedTourCard = ({
 
           {/* Inclusions & Exclusions */}
           <div className="grid grid-cols-2 gap-px mt-px bg-white/20">
-            <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-2 text-center">
+            <div className="bg-gradient-to-r from-forest-dark to-forest p-2 text-center">
               <div className="text-white font-semibold">Inclusion</div>
             </div>
             <div className="bg-red-800/90 p-2 text-center">
@@ -159,7 +159,7 @@ export const EnhancedTourCard = ({
             <div className="bg-black/90 p-2 space-y-1.5">
               {inclusions.map((item, idx) => (
                 <div key={idx} className="flex items-start">
-                  <Check className="h-4 w-4 text-yellow-400 mr-1.5 mt-0.5 flex-shrink-0" />
+                  <Check className="h-4 w-4 text-forest-light mr-1.5 mt-0.5 flex-shrink-0" />
                   <span className="text-xs text-white/90">{item}</span>
                 </div>
               ))}
@@ -175,7 +175,7 @@ export const EnhancedTourCard = ({
             </div>
           </div>
 
-          <Button className="w-full mt-4 bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 text-white border-0 shadow-md shadow-yellow-600/20 transition-all duration-300 hover:shadow-yellow-600/30">
+          <Button className="w-full mt-4 bg-gradient-to-r from-forest to-forest-light hover:from-forest-dark hover:to-forest text-white border-0 shadow-md shadow-forest/20 transition-all duration-300 hover:shadow-forest/30">
             SEND ENQUIRY
           </Button>
         </div>

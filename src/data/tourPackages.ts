@@ -3,7 +3,7 @@
 export const bestSellingPackages = [
   {
     title: "Unexplored Spiti Valley (Whole Circuit)",
-    image: "/lovable-uploads/004d4da2-0c5a-4efd-92dc-f0e69769eba9.png",
+    image: "/lovable-uploads/a1d1d79d-b672-4e1d-8080-a98199dcbd50.png",
     duration: {
       nights: 7,
       days: 8
@@ -40,7 +40,7 @@ export const bestSellingPackages = [
   },
   {
     title: "Royal Spiti Valley (Whole Circuit)",
-    image: "/lovable-uploads/bb764e2b-9724-4eb2-a626-66ce7be1aa10.png",
+    image: "/lovable-uploads/565dd4b6-dd3b-4caa-adfc-c0606b628fd0.png",
     duration: {
       nights: 8,
       days: 9
@@ -77,7 +77,7 @@ export const bestSellingPackages = [
   },
   {
     title: "Buddhist and Tribal Circuit (Whole Circuit)",
-    image: "/lovable-uploads/b89c6ad7-b7b2-48f6-be30-c38dbe7ce673.png",
+    image: "/lovable-uploads/998e9a6a-c61b-4669-acdb-b4941010d409.png",
     duration: {
       nights: 9,
       days: 10
@@ -118,7 +118,7 @@ export const bestSellingPackages = [
 export const adventurePackages = [
   {
     title: "Unexplored Spiti (Whole Circuit)",
-    image: "/lovable-uploads/895ec3ca-111f-468b-aab8-ea624c440058.png",
+    image: "/lovable-uploads/374593ac-cd0b-4a2c-bb44-3a75cd033b57.png",
     duration: {
       nights: 6,
       days: 7
@@ -157,7 +157,7 @@ export const adventurePackages = [
   },
   {
     title: "Women Only Spiti Trip",
-    image: "/lovable-uploads/a4a09b9d-58e7-438b-80c7-9ecfaecbf6d3.png",
+    image: "/lovable-uploads/1afcf28a-6c63-4708-9bb2-294b46c3df59.png",
     duration: {
       nights: 7,
       days: 8
@@ -196,7 +196,7 @@ export const adventurePackages = [
   },
   {
     title: "Spiti Valley By Your Own Car",
-    image: "/lovable-uploads/f217003a-8f7f-48c9-b6b6-ca766872a552.png",
+    image: "/lovable-uploads/1446c830-1252-4abd-b4b2-4c96625bc999.png",
     duration: {
       nights: 9,
       days: 10
@@ -232,7 +232,7 @@ export const adventurePackages = [
   },
   {
     title: "Lahul Spiti Bike Tour (Whole Circuit)",
-    image: "/lovable-uploads/e431bcae-ebff-4cdc-93d8-34f142193d30.png",
+    image: "/lovable-uploads/ebb9d23d-6688-4517-b586-c403d91c531b.png",
     duration: {
       nights: 7,
       days: 8
@@ -281,7 +281,7 @@ export const adventurePackages = [
 export const winterPackages = [
   {
     title: "Winter White Spiti",
-    image: "/lovable-uploads/6adbeea4-1075-4028-b45d-fe43b85c5df1.png",
+    image: "/lovable-uploads/e1826e1a-c9f6-4078-bace-fb8a27cba80f.png",
     duration: {
       nights: 6,
       days: 7
@@ -318,7 +318,7 @@ export const winterPackages = [
   },
   {
     title: "Snow Leopard Expedition (Winter Special)",
-    image: "/lovable-uploads/411ba0d9-ddf4-4a39-a00d-2b94852c9e57.png",
+    image: "/lovable-uploads/30275083-9d99-4d05-9910-5f8023b535bf.png",
     duration: {
       nights: 9,
       days: 10
