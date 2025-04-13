@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 const CallToActionSection = () => {
   return <section className="py-16 relative">
@@ -9,7 +10,7 @@ const CallToActionSection = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             
-            <Button variant="outline" className="neon-border border-2 border-white text-white px-8 py-6 text-lg hover:-translate-y-1 bg-transparent">
+            <Button variant="outline" className="neon-border border-2 border-white text-white px-8 py-6 text-lg hover:-translate-y-1 bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light">
               Contact Us
             </Button>
           </div>

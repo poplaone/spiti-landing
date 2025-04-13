@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Compass, Footprints, PlaneTakeoff } from "lucide-react";
+import { CheckCircle2, Compass } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface QuizStep1Props {
@@ -18,7 +18,7 @@ const QuizStep1 = ({ visitedBefore, setVisitedBefore }: QuizStep1Props) => {
       transition={{ duration: 0.5 }}
     >
       <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-        <Compass className="h-5 w-5 text-yellow-400 animate-pulse" />
+        <Compass className="h-5 w-5 text-forest-light animate-pulse" />
         <span>1. Have you ever been to Spiti before?</span>
       </h3>
       <div className="grid grid-cols-2 gap-4">
@@ -26,7 +26,7 @@ const QuizStep1 = ({ visitedBefore, setVisitedBefore }: QuizStep1Props) => {
           variant={visitedBefore === 'yes' ? 'default' : 'outline'} 
           className={`py-6 relative overflow-hidden transition-all duration-300 ${
             visitedBefore === 'yes' 
-              ? 'bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 neon-glow' 
+              ? 'bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light neon-glow' 
               : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
           }`} 
           onClick={() => setVisitedBefore('yes')}
@@ -40,7 +40,6 @@ const QuizStep1 = ({ visitedBefore, setVisitedBefore }: QuizStep1Props) => {
             />
           )}
           <div className="flex items-center justify-center gap-2 w-full">
-            <Footprints className="h-5 w-5 flex-shrink-0" />
             <span className="whitespace-nowrap">Yes, I've been!</span>
             {visitedBefore === 'yes' && <CheckCircle2 className="h-5 w-5 ml-1 text-white flex-shrink-0" />}
           </div>
@@ -49,7 +48,7 @@ const QuizStep1 = ({ visitedBefore, setVisitedBefore }: QuizStep1Props) => {
           variant={visitedBefore === 'no' ? 'default' : 'outline'} 
           className={`py-6 relative overflow-hidden transition-all duration-300 ${
             visitedBefore === 'no' 
-              ? 'bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400 neon-glow' 
+              ? 'bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light neon-glow' 
               : 'bg-white/10 hover:bg-white/20 text-white hover:scale-105'
           }`} 
           onClick={() => setVisitedBefore('no')}
@@ -63,7 +62,6 @@ const QuizStep1 = ({ visitedBefore, setVisitedBefore }: QuizStep1Props) => {
             />
           )}
           <div className="flex items-center justify-center gap-2 w-full">
-            <PlaneTakeoff className="h-5 w-5 flex-shrink-0" />
             <span className="whitespace-nowrap">No, first time.</span>
             {visitedBefore === 'no' && <CheckCircle2 className="h-5 w-5 ml-1 text-white flex-shrink-0" />}
           </div>

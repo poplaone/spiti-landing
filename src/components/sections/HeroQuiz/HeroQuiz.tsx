@@ -39,7 +39,7 @@ const HeroQuiz = () => {
 
   return (
     <>
-      <Card className="w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-yellow-500/10 overflow-hidden rounded-xl text-white shadow-xl hover:shadow-yellow-700/20">
+      <Card className="w-full max-w-2xl mx-auto lg:mx-0 neo-blur backdrop-blur-xl bg-black/80 border border-forest-light/10 overflow-hidden rounded-xl text-white shadow-xl hover:shadow-forest-dark/20">
         <CardContent className="p-6 relative">
           <motion.div 
             className="absolute top-0 right-0 w-20 h-20 opacity-30 pointer-events-none" 
@@ -47,7 +47,7 @@ const HeroQuiz = () => {
             animate={{ opacity: 0.3, scale: 1 }} 
             transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
           >
-            <Mountain className="w-full h-full text-yellow-500" />
+            <Mountain className="w-full h-full text-forest-light" />
           </motion.div>
           
           {renderQuizContent()}
@@ -60,7 +60,7 @@ const HeroQuiz = () => {
             <Button 
               onClick={handleNextStep} 
               disabled={currentStep === 1 && !visitedBefore || currentStep === 2 && !budget} 
-              className="text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300 bg-gradient-to-r from-yellow-500 to-yellow-300 hover:from-yellow-600 hover:to-yellow-400"
+              className="text-white py-2 px-8 rounded-full flex items-center group relative overflow-hidden transition-all duration-300 bg-gradient-to-r from-forest-dark to-forest-light hover:from-forest hover:to-forest-light"
             >
               <motion.span 
                 className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" 
