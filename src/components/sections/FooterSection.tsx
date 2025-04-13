@@ -1,4 +1,6 @@
+
 import { MapPin, Mail, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const FooterSection = () => {
   return (
